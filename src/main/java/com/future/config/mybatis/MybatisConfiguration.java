@@ -2,6 +2,7 @@ package com.future.config.mybatis;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.session.SqlSessionFactory;

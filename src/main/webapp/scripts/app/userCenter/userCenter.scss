@@ -1,0 +1,9 @@
+.basic-message .form-control{
+  display: inline;
+}
+.basic-message .form-group:nth-of-type(2),
+.basic-message .form-group:nth-of-type(3),
+.basic-message .form-group:nth-of-type(4),
+.basic-message .form-group:nth-of-type(5),{
+  margin-left: 2px;
+}

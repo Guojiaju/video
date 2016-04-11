@@ -1,0 +1,11 @@
+<div class="movie_directive">
+  <span class="previous"></span>
+  <div class="liquid-content">
+    <div class="wrapper">
+      <ul>
+        <li class="photo-md" ng-repeat="movie in movies"><a><img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{ movie.imgId}}"></a></li>
+      </ul>
+    </div>
+  </div>
+  <span class="next"></span>
+</div>

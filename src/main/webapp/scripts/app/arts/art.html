@@ -1,0 +1,188 @@
+<div class="container">
+  <div class="carouse text-center carouse-top" style="height: 305px;margin-top: 50px;">
+    <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <slide ng-repeat="slide in art.lgArts">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{slide.imgId}}" style="margin:auto;width: 100%;height: 428px;">
+        <div class="carousel-caption">
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+    <!-- <p>
+       With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+     </p>-->
+  </div>
+  <div class="row" style="margin:125px 0px 0px 0px;">
+    <div class="col-sm-3 col-md-3">
+        <div class="line-tip">
+          <h4>地区</h4>
+        </div>
+        <div class="li-tip">
+          <ul class="list-unstyled list-inline">
+            <li>内地</li>
+            <li>港台</li>
+            <li>日韩</li>
+            <li>欧美</li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>分类</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>播报</li>
+          <li>情感</li>
+          <li>搞笑</li>
+          <li>选秀</li>
+          <li>游戏</li>
+          <li>相声</li>
+          <li>职场</li>
+          <li>真人秀</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-5">
+      <div class="line-tip">
+        <h4>热点</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>奔跑吧兄弟</li>
+          <li>最强大脑</li>
+          <li>王牌对王牌</li>
+          <li>花样姐姐</li>
+          <li>康熙来了</li>
+          <li>欢乐喜剧人</li>
+          <li>暴走漫画</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+        <div class="main-title">
+          <h3 class="glyphicon glyphicon-triangle-right"></h3>
+          <h3>强档推荐</h3>
+        </div>
+        <div class="right-title">
+            <button class="btn btn-link" ui-sref="nav.artsSort">更多></button>
+        </div>
+    </div>
+    <div tv-pane tv-datas="art.artShows"></div>
+  </div>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>最新更新</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>综艺劲爆点</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div tv-pane tv-datas="art.artShows"></div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>大陆综艺</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div tv-pane tv-datas="art.artShows"></div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>韩国综艺</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div tv-pane tv-datas="art.artShows"></div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>港台综艺</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div tv-pane tv-datas="art.artShows"></div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>游戏解说</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>相声之乡</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="new in art.artNews">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{new.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+.navbar-home {
+  width:100%;
+  position: relative;
+  height: 20px;
+}
+.navbar-right {
+  position: absolute;
+  left: 75%;
+}
+._login, ._create_account {
+  margin-top: 11px;
+}
+.user_center {
+  margin-top: 8px;
+}
+#bs-example-navbar-collapse-6 .search {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 80px;
+  opacity: 0.5;
+}
+#bs-example-navbar-collapse-6 .basic-addon2 {
+  position: absolute;
+  margin-left: 277px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+.basic-addon2 .btn {
+  height: 34px;
+}
+.navbar-btn {
+  margin-right:-80px;
+}
+.navbar-drop {
+  margin-top: 8px;
+}
+.navbar-main {
+  @media (min-width: $screen-sm-min) {
+    width: 750px;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 970px;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 1170px;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}

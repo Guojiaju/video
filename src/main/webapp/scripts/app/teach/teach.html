@@ -1,0 +1,184 @@
+<div class="container">
+  <div class="row" style="margin-top: 45px;height: 305px;">
+    <div class="col-sm-12 col-md-12">
+      <a ui-sref="#" class="thumbnail" style="border:1px solid #FFFFFF;padding: 0;">
+        <img src="../assets/images/teach/a1.jpg" class="" style="min-width: 100%;height: 428px;">
+      </a>
+    </div>
+  </div>
+  <div class="row" style="margin:125px 0px 0px 0px;">
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>类型</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>幼儿</li>
+          <li>小学</li>
+          <li>初中</li>
+          <li>高中</li>
+          <li>外语学习</li>
+          <li>职业教育</li>
+          <li>管理培训</li>
+          <li>使用教程</li>
+          <li>公开课</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>机构</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>新东方</li>
+          <li>智课网</li>
+          <li>慕课网</li>
+          <li>腾讯课堂</li>
+          <li>慕课网</li>
+          <li>亲宝网</li>
+          <li>酷学习</li>
+          <li>高顿</li>
+          <li>Koolearn</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>热点</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>JAVA</li>
+          <li>JavaScript</li>
+          <li>考研</li>
+          <li>公务员</li>
+          <li>雅思</li>
+          <li>托福</li>
+          <li>启蒙</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>猜你喜欢</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link" ui-sref="nav.teachSort">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>中小学教育</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>启蒙教育</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>热门精选</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>外语学习</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top tv-panel">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>职业培训</h3>
+        <div class="right-title">
+          <button class="btn btn-link">更多></button>
+        </div>
+      </div>
+    </div>
+    <div tv-pane tv-datas="teach.educations"></div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>学历教育</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="guess in teach.guesses">
+      <div class="">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{guess.imgId}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row offset-top">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="main-title">
+        <h3>生活课堂</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="live in teach.lives">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{live.imgId}}">
+        <div class="caption">
+          <h3>{{oldMovie.title}}</h3>
+          <p><a ng-href="#"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

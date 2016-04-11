@@ -1,0 +1,29 @@
+<div class="modal-top">
+  <button class="btn btn-link btn-xs" ng-click="modal.cancel()"><span class="glyphicon glyphicon-remove"></span></button>
+</div>
+<div class="modal-body">
+  <section class="login_content">
+    <form>
+      <h1>Login Form</h1>
+      <div>
+      <input type="text" class="form-control" size="40" placeholder="Username" name="name" ng-model="modal.user.name" required="" />
+      </div>
+      <div>
+        <input type="password" class="form-control" size="40" placeholder="Password" name="password" ng-model="modal.user.password" required="" />
+      </div>
+      <div>
+        <a class="btn btn-primary submit" ng-click="modal.ok()">登录</a>
+        <a class="reset_pass">忘记密码?</a>
+      </div>
+      <div class="clearfix"></div>
+      <div class="separator">
+      <p class="change_link">Welcome To Hot Tv Web </p>
+      <br />
+    </div>
+  </form>
+  </section>
+</div>
+<!--<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="modal.ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+</div>-->

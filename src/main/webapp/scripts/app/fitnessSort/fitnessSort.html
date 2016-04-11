@@ -1,0 +1,49 @@
+<div class="container">
+  <hr>
+  <div class="row sort">
+    <ul class="list-unstyled list-inline list-underline" ng-repeat="menu in fitnessSort.menus">
+      <li ng-repeat="data in menu.datas">{{data.title}}</li>
+    </ul>
+  </div>
+  <div class="row offset-top query">
+    <span>排序</span>
+    <div class="btn-group" dropdown is-open="false">
+      <span id="single-button1" type="button" class="btn" dropdown-toggle ng-disabled="disabled">
+        最多播放 <span class="caret"></span>
+      </span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button1" style="min-width: 20px;">
+        <li role="menuitem"><a href="#">最多播放</a></li>
+        <li role="menuitem"><a href="#">最多评论</a></li>
+        <li role="menuitem"><a href="#">最受欢迎</a></li>
+        <li role="menuitem"><a href="#">最新上线</a></li>
+        <li role="menuitem"><a href="#">最新更新</a></li>
+      </ul>
+    </div>
+    <div class="btn-group" dropdown is-open="false">
+      <span id="single-button2" type="button" class="btn" dropdown-toggle ng-disabled="disabled">
+        今日 <span class="caret"></span>
+      </span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button2"style="min-width: 20px;">
+        <li role="menuitem"><a href="#">今日</a></li>
+        <li role="menuitem"><a href="#">本周</a></li>
+        <li role="menuitem"><a href="#">历史</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-tv col-md-tv" ng-repeat="fitness in fitnessSort.fitnesses">
+      <div class="tv">
+        <img class="img_tv" ng-src="{{ fitness.image}}">
+        <div class="caption">
+          <h5>{{ tv.message}}</h5>
+          <p>{{ tv.id }}</p>
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" align="center">
+    <pagination  total-items="totalItems" ng-model="currentPage" ng-change="" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;"></pagination>
+  </div>
+</div>
+

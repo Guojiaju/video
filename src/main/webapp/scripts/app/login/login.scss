@@ -1,0 +1,133 @@
+#login{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url("../assets/images/bg.jpg");
+  background-position:center;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+.logo {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.user {
+  position: absolute;
+  right: 78%;
+  top:24%;
+}
+.lock {
+  position: absolute;
+  right: 78%;
+  top:43%;
+
+}
+#login .main {
+  background-color: #ffffff;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: 40%;
+  top:30%;
+}
+#login form {
+  margin-left: 40px;
+}
+#login .form-group {
+  margin-left: 30px;
+}
+#login input[type] {
+  padding-left: 25px;
+}
+.btn-login {
+  width: 270px;
+  height: 40px;
+  margin-right: 30px;
+  background-color:#F19331 ;
+}
+.login_content h1 {
+  font: normal 25px Helvetica, Arial, sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 20px;
+  margin: 10px 0 30px 100px;
+}
+.login_content h1:before,
+.login_content h1:after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 5px;
+  width: 25%;
+}
+.login_content h1:after {
+  background: rgb(126,126,126);
+  background: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  right: 80px;
+}
+.login_content h1:before {
+  background: rgb(126,126,126);
+  background: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
+  left: 70px;
+}
+.login_content {
+  margin-left: 120px;
+  margin-top: -30px;
+}
+.login_content input{
+  margin-bottom: 20px;
+}
+.login_content .submit {
+  margin-left: 55px;
+}
+.login_content .reset_pass{
+  margin-left: 40px;
+}
+.login_content .clearfix {
+  border-top: 1px solid #dddddd;
+  margin-right: 110px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.login_content .change_link {
+  margin-left: 90px;
+}
+.login_content .agree {
+  margin-top: -15px;
+}
+.login_content .agree a {
+  font-size: 12px;
+}
+.login_content .agree .btn {
+  margin-left: 100px;
+}
+.login_content .create_account {
+  width: 240px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  background-color: #7FB52B;
+  color: #ffffff;
+}
+.login_content .change_link {
+  color: #d2d2d2;
+}
+.modal-top {
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 560px;
+}
+.modal-top span {
+  color: #dddddd;
+}

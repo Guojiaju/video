@@ -1,0 +1,199 @@
+<div class="container">
+  <div class="carouse text-center carouse-top" style="height: 305px;margin-top: 50px;">
+    <carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <slide ng-repeat="slide in animation.lgAnimations">
+        <img ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{slide.imgId}}" style="margin:auto;min-width:100%;height: 428px;">
+        <div class="carousel-caption">
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+    <!-- <p>
+       With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+     </p>-->
+  </div>
+  <div class="row" style="margin:125px 0px 0px 0px;">
+    <div class="col-sm-3 col-md-3">
+        <div class="line-tip">
+          <h4>分类</h4>
+        </div>
+        <div class="li-tip">
+          <ul class="list-unstyled list-inline">
+            <li>日本</li>
+            <li>欧美</li>
+            <li>国产</li>
+            <li>剧场版</li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="line-tip">
+        <h4>分类</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>动作</li>
+          <li>恋爱</li>
+          <li>热血</li>
+          <li>机战</li>
+          <li>搞笑</li>
+          <li>校园</li>
+          <li>少女向</li>
+          <li>科幻</li>
+          <li>古代</li>
+          <li>悬疑</li>
+          <li>运动</li>
+          <li>剧情</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-5">
+      <div class="line-tip">
+        <h4>热点</h4>
+      </div>
+      <div class="li-tip">
+        <ul class="list-unstyled list-inline">
+          <li>海贼王</li>
+          <li>火影忍者</li>
+          <li>秦时明月</li>
+          <li>画江湖之灵主</li>
+          <li>口水三国</li>
+          <li>功夫鸡</li>
+          <li>进击的巨人</li>
+          <li>网球王子</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+        <div class="main-title">
+          <h3 class="glyphicon glyphicon-triangle-right"></h3>
+          <h3>日漫新番</h3>
+        </div>
+        <div class="right-title">
+            <button class="btn btn-link" ui-sref="nav.animationSort">更多></button>
+        </div>
+    </div>
+    <div md-carousel some-attr="animation.newAnimations" index="0"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>人气风标</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div tv-pane tv-datas="animation.popularDatas"></div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>日本动漫</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="japan in animation.japanAnimation">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{japan.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>国内动漫</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="china in animation.chinaAnimation">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{china.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>名气之作</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="famous in animation.famousAnimation">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{famous.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>剧场版</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="movie in animation.movieAnimation">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{movie.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-xs-12 col-md-12 col-sm-12 border-bottom">
+      <div class="main-title">
+        <h3 class="glyphicon glyphicon-triangle-right"></h3>
+        <h3>经典专区</h3>
+      </div>
+      <div class="right-title">
+        <button class="btn btn-link">更多></button>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-2" ng-repeat="classic in animation.classicAnimation">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="http://localhost:8080/end_tv_web/movieAction/getPath/{{classic.imgId}}">
+        <div class="caption">
+          <h3>{{ new.title}}</h3>
+          <!--<p>{{ awesomeThing.description }}</p>-->
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

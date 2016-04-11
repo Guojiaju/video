@@ -1,0 +1,88 @@
+<nav class="navbar navbar-fixed-top navbar-main navbar-inverse" id="navbar">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a class="navbar-brand"  ui-sref="nav.main">
+          <span class="glyphicon glyphicon-home"></span>Hot Video
+          </a>
+        </li>
+        <li><a ui-sref="nav.tv">电视剧</a></li>
+        <li><a ui-sref="nav.movie">电影</a></li>
+        <li><a ui-sref="nav.art">综艺</a></li>
+        <li><a ui-sref="nav.animation">动漫</a></li>
+        <li><a ui-sref="nav.fitness">健康</a></li>
+        <li><a ui-sref="nav.teach">教育</a></li>
+        <li></li>
+        <li>
+          <div class="input-group">
+            <input type="text" class="form-control search" placeholder="Search for...">
+            <span class="input-group-btn basic-addon2">
+              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right list-inline">
+        <li><div class="dropdown navbar-drop" dropdown is-open="false">
+          <span class="btn btn-link " id="dropdownMenu1" dropdown-toggle ng-disabled="disabled">
+            开启你的电影之旅
+            <span class="caret"></span>
+          </span>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="min-width: 20px;margin-right: -20px;">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div></li>
+        <li><button class="btn-link _login" ng-click="vm.open()" ng-if="!vm.user.name">登录</button></li>
+        <li><button class="btn-link  _create_account" ng-click="vm.create()" ng-if="!vm.user.name">注册</button></li>
+        <li ng-if="vm.user.name">
+          <div class="btn-group user_center" dropdown is-open="false">
+          <button id="simple-btn-keyboard-nav"  class="btn btn-link" dropdown-toggle ng-disabled="disabled">
+           {{vm.user.name}}<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav" style="min-width: 30px;margin-right: -40px;">
+            <li role="menuitem"><a ui-sref="nav.personalCenter">个人中心</a></li>
+            <li role="menuitem"><a href="#">我的关注</a></li>
+            <li role="menuitem"><a href="#">上传</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="#">退出</a></li>
+          </ul>
+        </div></li>
+        <script type="text/ng-template" id="createModal.html">
+          <div class="modal-top">
+            <button class="btn btn-link btn-xs" ng-click="create.cancel()"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+          <div class="modal-body">
+            <section class="login_content">
+              <form>
+                <h1>Create Form</h1>
+                <div>
+                  <input type="text" class="form-control" size="40" placeholder="昵称" name="name" ng-model="create.user.name" required="" />
+                </div>
+                <div>
+                  <input type="password" class="form-control" size="40" placeholder="密码" name="password" ng-model="create.user.password" required="" />
+                </div>
+                <div>
+                  <input type="password" class="form-control" size="40" placeholder="确认密码" name="repassword" ng-model="create.repassword" required="" />
+                </div>
+                <div>
+                  <input type="email" class="form-control" size="40" placeholder="邮箱" name="email" ng-model="create.user.email" required="" />
+                </div>
+                <div class="agree">
+                  <label class="control-label"><input type="checkbox" class="checkbox-default"><a href="#"> &nbsp;同意注册协议及版权声明</a></label>
+                  <button class="btn-link btn">立即登陆</button>
+                </div>
+                <div>
+                  <button class="btn btn-default create_account" ng-click="create.ok()">注册</button>
+                </div>
+              </form>
+            </section>
+          </div>
+         </script>
+      </ul>
+    </div>
+  </div>
+</nav>

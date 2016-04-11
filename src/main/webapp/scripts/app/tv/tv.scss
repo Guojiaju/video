@@ -1,0 +1,39 @@
+.navbar-tv {
+  border:1px solid #222;
+  background:rgba(34,34,34,0.9);
+}
+.nav-top h4 {
+  color:#ffffff;
+  border-right: 1px solid #dddddd;
+  margin-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+.nav-content li {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 14px;
+}
+.border-bottom {
+  border-bottom: 2px solid #66AA33;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+.tv {
+  height: 300px;
+}
+.tv:first-child {
+  margin-left: 10px;
+}
+.img_tv {
+  width: 180px;
+}
+.main-title , .right-title .btn {
+  color:#66AA33;
+}
+.col-md-tv {
+  width: 16%;
+  float: left;
+  margin-right: 5px;
+}

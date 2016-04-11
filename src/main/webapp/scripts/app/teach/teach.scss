@@ -1,0 +1,58 @@
+.main-title, .right-title {
+  display: inline;
+}
+.right-title {
+  margin-right: -80px;
+}
+.main-title span, .main-title h3 {
+  display: inline;
+}
+/* Thumbnail Box */
+.caption h4 {
+  font-size: 1rem;
+  color: #444;
+}
+.caption p {
+  font-size: 0.75rem;
+  color: #999;
+}
+.btn.btn-mini {
+  font-size: 0.63rem;
+}
+.offset-left {
+  margin-left: -270px !important;
+}
+.offset-top {
+  margin-top: 30px;
+}
+.offset-left-2 {
+  margin-left: 20px;
+}
+.title-inline {
+  margin-bottom: 20px;
+}
+.title-inline span, .title-inline h3 {
+  display: inline;
+}
+.block-layout {
+  margin-top: 40px;
+}
+.block-layout .nav-video {
+  margin-left: 100px;
+  margin-top: -33px;
+}
+.big {
+  width:400px;
+  height:400px;
+}
+.square:first-child{
+  width:33%;
+}
+.square:first-child .thumbnail {
+  height:220px;
+}
+.square:first-child .thumbnail img {
+  width:345px;
+  height: 210px;
+}
+

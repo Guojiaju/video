@@ -33,11 +33,11 @@ public class SwaggerConfiguration {
         ApiInfo apiInfo = new ApiInfo(
                 "My Project's REST API",
                 "All Apis Are Here , So You Can Test Them Easily !",
-                "API TOS",
+                "1.0.0",
+                "urn:tos",
                 "guojiaju23@126.com",
-                "API License",
-                "API License URL",
-                ""
+                "Apache 2.0",
+                "http://www.apache.org/licenses/LICENSE-2.0"
         );
         return apiInfo;
     }

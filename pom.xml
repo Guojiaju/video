@@ -36,6 +36,11 @@
     <swagger-ui.version>2.3.1</swagger-ui.version>
   <!-- druid -->
   <druid.version>1.0.9</druid.version>
+    <!-- shiro -->
+    <shiro-core.version>1.2.3</shiro-core.version>
+    <shiro-spring.version>1.2.3</shiro-spring.version>
+    <shiro-web.version>1.2.3</shiro-web.version>
+    <shiro-aspectj.version>1.2.3</shiro-aspectj.version>
   </properties>
 
   <parent>
@@ -51,7 +56,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -78,7 +82,6 @@
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
     </dependency>
-
     <!-- myBatis -->
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -111,7 +114,6 @@
       <artifactId>pagehelper</artifactId>
       <version>${pagehelper.version}</version>
     </dependency>
-
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -137,7 +139,6 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-commons</artifactId>
@@ -174,8 +175,28 @@
       <artifactId>springfox-swagger-ui</artifactId>
       <version>${swagger-ui.version}</version>
     </dependency>
+    <!-- shiro -->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-core</artifactId>
+      <version>${shiro-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-web</artifactId>
+      <version>${shiro-web.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring</artifactId>
+      <version>${shiro-spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-aspectj</artifactId>
+      <version>${shiro-aspectj.version}</version>
+    </dependency>
   </dependencies>
-
   <build>
     <pluginManagement>
       <plugins>
@@ -212,5 +233,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
 </project>

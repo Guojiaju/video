@@ -2,8 +2,6 @@ package com.future.api.movie.domain;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-import java.io.Serializable;
-import java.util.Date;
 
 public class Movie extends AbstractAuditingEntity {
 

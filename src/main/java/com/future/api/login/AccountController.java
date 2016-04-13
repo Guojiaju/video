@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/account")
 public class AccountController {
+    @RequestMapping("/login")
     public ResponseEntity login(){
         return null;
     }

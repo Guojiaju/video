@@ -2,7 +2,6 @@ package com.future.api.user.domain;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 public class User extends AbstractAuditingEntity{

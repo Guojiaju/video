@@ -2,9 +2,6 @@ package com.future.api.image.domain;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-import java.io.Serializable;
-import java.util.Date;
-
 public class Image extends AbstractAuditingEntity {
 
     private String localPath;

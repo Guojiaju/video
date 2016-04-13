@@ -36,15 +36,17 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
         "insert into t_movie (id, img_id, ",
         "name, type, director, ",
         "score, short_message, ",
-        "staror, owner_id, ",
-        "created_by, created_date, ",
-        "updated_by, updated_date)",
+        "staror, area, production_year, ",
+        "owner_id, created_by, ",
+        "created_date, updated_by, ",
+        "updated_date)",
         "values (#{id,jdbcType=VARCHAR}, #{imgId,jdbcType=VARCHAR}, ",
         "#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{director,jdbcType=VARCHAR}, ",
         "#{score,jdbcType=VARCHAR}, #{shortMessage,jdbcType=VARCHAR}, ",
-        "#{staror,jdbcType=VARCHAR}, #{ownerId,jdbcType=VARCHAR}, ",
-        "#{createdBy,jdbcType=VARCHAR}, #{createdDate,jdbcType=DATE}, ",
-        "#{updatedBy,jdbcType=VARCHAR}, #{updatedDate,jdbcType=DATE})"
+        "#{staror,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{productionYear,jdbcType=INTEGER}, ",
+        "#{ownerId,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, ",
+        "#{createdDate,jdbcType=DATE}, #{updatedBy,jdbcType=VARCHAR}, ",
+        "#{updatedDate,jdbcType=DATE})"
     })
     int insert(Movie record);
 
@@ -61,6 +63,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
         @Result(column="score", property="score", jdbcType=JdbcType.VARCHAR),
         @Result(column="short_message", property="shortMessage", jdbcType=JdbcType.VARCHAR),
         @Result(column="staror", property="staror", jdbcType=JdbcType.VARCHAR),
+        @Result(column="area", property="area", jdbcType=JdbcType.VARCHAR),
+        @Result(column="production_year", property="productionYear", jdbcType=JdbcType.INTEGER),
         @Result(column="owner_id", property="ownerId", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_date", property="createdDate", jdbcType=JdbcType.DATE),
@@ -79,6 +83,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
         @Result(column="score", property="score", jdbcType=JdbcType.VARCHAR),
         @Result(column="short_message", property="shortMessage", jdbcType=JdbcType.VARCHAR),
         @Result(column="staror", property="staror", jdbcType=JdbcType.VARCHAR),
+        @Result(column="area", property="area", jdbcType=JdbcType.VARCHAR),
+        @Result(column="production_year", property="productionYear", jdbcType=JdbcType.INTEGER),
         @Result(column="owner_id", property="ownerId", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_date", property="createdDate", jdbcType=JdbcType.DATE),
@@ -89,8 +95,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
 
     @Select({
         "select",
-        "id, img_id, name, type, director, score, short_message, staror, owner_id, created_by, ",
-        "created_date, updated_by, updated_date",
+        "id, img_id, name, type, director, score, short_message, staror, area, production_year, ",
+        "owner_id, created_by, created_date, updated_by, updated_date",
         "from t_movie",
         "where id = #{id,jdbcType=VARCHAR}"
     })
@@ -103,6 +109,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
         @Result(column="score", property="score", jdbcType=JdbcType.VARCHAR),
         @Result(column="short_message", property="shortMessage", jdbcType=JdbcType.VARCHAR),
         @Result(column="staror", property="staror", jdbcType=JdbcType.VARCHAR),
+        @Result(column="area", property="area", jdbcType=JdbcType.VARCHAR),
+        @Result(column="production_year", property="productionYear", jdbcType=JdbcType.INTEGER),
         @Result(column="owner_id", property="ownerId", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_date", property="createdDate", jdbcType=JdbcType.DATE),
@@ -129,6 +137,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
           "score = #{score,jdbcType=VARCHAR},",
           "short_message = #{shortMessage,jdbcType=VARCHAR},",
           "staror = #{staror,jdbcType=VARCHAR},",
+          "area = #{area,jdbcType=VARCHAR},",
+          "production_year = #{productionYear,jdbcType=INTEGER},",
           "owner_id = #{ownerId,jdbcType=VARCHAR},",
           "created_by = #{createdBy,jdbcType=VARCHAR},",
           "created_date = #{createdDate,jdbcType=DATE},",

@@ -68,7 +68,7 @@
 		</javaClientGenerator>
 
 		<!-- 配置表信息 -->
-		<table schema="Test" tableName="t_role_resources" domainObjectName="RoleResources" />
+		<table schema="Test" tableName="t_category" domainObjectName="Category" />
 
 	</context>
 </generatorConfiguration>  

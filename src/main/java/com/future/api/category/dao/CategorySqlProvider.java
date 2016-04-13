@@ -1,4 +1,4 @@
-package com.future.api.movie.dao;
+package com.future.api.category.dao;
 
 import static org.apache.ibatis.jdbc.SqlBuilder.BEGIN;
 import static org.apache.ibatis.jdbc.SqlBuilder.DELETE_FROM;
@@ -13,76 +13,48 @@ import static org.apache.ibatis.jdbc.SqlBuilder.UPDATE;
 import static org.apache.ibatis.jdbc.SqlBuilder.VALUES;
 import static org.apache.ibatis.jdbc.SqlBuilder.WHERE;
 
-import com.future.api.movie.domain.Movie;
-import com.future.api.movie.domain.MovieCriteria.Criteria;
-import com.future.api.movie.domain.MovieCriteria.Criterion;
-import com.future.api.movie.domain.MovieCriteria;
+import com.future.api.category.domain.Category;
+import com.future.api.category.domain.CategoryCriteria.Criteria;
+import com.future.api.category.domain.CategoryCriteria.Criterion;
+import com.future.api.category.domain.CategoryCriteria;
 import java.util.List;
 import java.util.Map;
 
-public class MovieSqlProvider {
+public class CategorySqlProvider {
 
-    public String countByExample(MovieCriteria example) {
+    public String countByExample(CategoryCriteria example) {
         BEGIN();
         SELECT("count(*)");
-        FROM("t_movie");
+        FROM("t_category");
         applyWhere(example, false);
         return SQL();
     }
 
-    public String deleteByExample(MovieCriteria example) {
+    public String deleteByExample(CategoryCriteria example) {
         BEGIN();
-        DELETE_FROM("t_movie");
+        DELETE_FROM("t_category");
         applyWhere(example, false);
         return SQL();
     }
 
-    public String insertSelective(Movie record) {
+    public String insertSelective(Category record) {
         BEGIN();
-        INSERT_INTO("t_movie");
+        INSERT_INTO("t_category");
         
         if (record.getId() != null) {
             VALUES("id", "#{id,jdbcType=VARCHAR}");
         }
         
-        if (record.getImgId() != null) {
-            VALUES("img_id", "#{imgId,jdbcType=VARCHAR}");
+        if (record.getCategoryName() != null) {
+            VALUES("category_name", "#{categoryName,jdbcType=VARCHAR}");
         }
         
-        if (record.getName() != null) {
-            VALUES("name", "#{name,jdbcType=VARCHAR}");
+        if (record.getParentId() != null) {
+            VALUES("parent_id", "#{parentId,jdbcType=VARCHAR}");
         }
         
-        if (record.getType() != null) {
-            VALUES("type", "#{type,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDirector() != null) {
-            VALUES("director", "#{director,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getScore() != null) {
-            VALUES("score", "#{score,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getShortMessage() != null) {
-            VALUES("short_message", "#{shortMessage,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getStaror() != null) {
-            VALUES("staror", "#{staror,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getArea() != null) {
-            VALUES("area", "#{area,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getProductionYear() != null) {
-            VALUES("production_year", "#{productionYear,jdbcType=INTEGER}");
-        }
-        
-        if (record.getOwnerId() != null) {
-            VALUES("owner_id", "#{ownerId,jdbcType=VARCHAR}");
+        if (record.getEnable() != null) {
+            VALUES("enable", "#{enable,jdbcType=CHAR}");
         }
         
         if (record.getCreatedBy() != null) {
@@ -104,28 +76,21 @@ public class MovieSqlProvider {
         return SQL();
     }
 
-    public String selectByExample(MovieCriteria example) {
+    public String selectByExample(CategoryCriteria example) {
         BEGIN();
         if (example != null && example.isDistinct()) {
             SELECT_DISTINCT("id");
         } else {
             SELECT("id");
         }
-        SELECT("img_id");
-        SELECT("name");
-        SELECT("type");
-        SELECT("director");
-        SELECT("score");
-        SELECT("short_message");
-        SELECT("staror");
-        SELECT("area");
-        SELECT("production_year");
-        SELECT("owner_id");
+        SELECT("category_name");
+        SELECT("parent_id");
+        SELECT("enable");
         SELECT("created_by");
         SELECT("created_date");
         SELECT("updated_by");
         SELECT("updated_date");
-        FROM("t_movie");
+        FROM("t_category");
         applyWhere(example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -136,54 +101,26 @@ public class MovieSqlProvider {
     }
 
     public String updateByExampleSelective(Map<String, Object> parameter) {
-        Movie record = (Movie) parameter.get("record");
-        MovieCriteria example = (MovieCriteria) parameter.get("example");
+        Category record = (Category) parameter.get("record");
+        CategoryCriteria example = (CategoryCriteria) parameter.get("example");
         
         BEGIN();
-        UPDATE("t_movie");
+        UPDATE("t_category");
         
         if (record.getId() != null) {
             SET("id = #{record.id,jdbcType=VARCHAR}");
         }
         
-        if (record.getImgId() != null) {
-            SET("img_id = #{record.imgId,jdbcType=VARCHAR}");
+        if (record.getCategoryName() != null) {
+            SET("category_name = #{record.categoryName,jdbcType=VARCHAR}");
         }
         
-        if (record.getName() != null) {
-            SET("name = #{record.name,jdbcType=VARCHAR}");
+        if (record.getParentId() != null) {
+            SET("parent_id = #{record.parentId,jdbcType=VARCHAR}");
         }
         
-        if (record.getType() != null) {
-            SET("type = #{record.type,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDirector() != null) {
-            SET("director = #{record.director,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getScore() != null) {
-            SET("score = #{record.score,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getShortMessage() != null) {
-            SET("short_message = #{record.shortMessage,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getStaror() != null) {
-            SET("staror = #{record.staror,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getArea() != null) {
-            SET("area = #{record.area,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getProductionYear() != null) {
-            SET("production_year = #{record.productionYear,jdbcType=INTEGER}");
-        }
-        
-        if (record.getOwnerId() != null) {
-            SET("owner_id = #{record.ownerId,jdbcType=VARCHAR}");
+        if (record.getEnable() != null) {
+            SET("enable = #{record.enable,jdbcType=CHAR}");
         }
         
         if (record.getCreatedBy() != null) {
@@ -208,71 +145,36 @@ public class MovieSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         BEGIN();
-        UPDATE("t_movie");
+        UPDATE("t_category");
         
         SET("id = #{record.id,jdbcType=VARCHAR}");
-        SET("img_id = #{record.imgId,jdbcType=VARCHAR}");
-        SET("name = #{record.name,jdbcType=VARCHAR}");
-        SET("type = #{record.type,jdbcType=VARCHAR}");
-        SET("director = #{record.director,jdbcType=VARCHAR}");
-        SET("score = #{record.score,jdbcType=VARCHAR}");
-        SET("short_message = #{record.shortMessage,jdbcType=VARCHAR}");
-        SET("staror = #{record.staror,jdbcType=VARCHAR}");
-        SET("area = #{record.area,jdbcType=VARCHAR}");
-        SET("production_year = #{record.productionYear,jdbcType=INTEGER}");
-        SET("owner_id = #{record.ownerId,jdbcType=VARCHAR}");
+        SET("category_name = #{record.categoryName,jdbcType=VARCHAR}");
+        SET("parent_id = #{record.parentId,jdbcType=VARCHAR}");
+        SET("enable = #{record.enable,jdbcType=CHAR}");
         SET("created_by = #{record.createdBy,jdbcType=VARCHAR}");
         SET("created_date = #{record.createdDate,jdbcType=DATE}");
         SET("updated_by = #{record.updatedBy,jdbcType=VARCHAR}");
         SET("updated_date = #{record.updatedDate,jdbcType=DATE}");
         
-        MovieCriteria example = (MovieCriteria) parameter.get("example");
+        CategoryCriteria example = (CategoryCriteria) parameter.get("example");
         applyWhere(example, true);
         return SQL();
     }
 
-    public String updateByPrimaryKeySelective(Movie record) {
+    public String updateByPrimaryKeySelective(Category record) {
         BEGIN();
-        UPDATE("t_movie");
+        UPDATE("t_category");
         
-        if (record.getImgId() != null) {
-            SET("img_id = #{imgId,jdbcType=VARCHAR}");
+        if (record.getCategoryName() != null) {
+            SET("category_name = #{categoryName,jdbcType=VARCHAR}");
         }
         
-        if (record.getName() != null) {
-            SET("name = #{name,jdbcType=VARCHAR}");
+        if (record.getParentId() != null) {
+            SET("parent_id = #{parentId,jdbcType=VARCHAR}");
         }
         
-        if (record.getType() != null) {
-            SET("type = #{type,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getDirector() != null) {
-            SET("director = #{director,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getScore() != null) {
-            SET("score = #{score,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getShortMessage() != null) {
-            SET("short_message = #{shortMessage,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getStaror() != null) {
-            SET("staror = #{staror,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getArea() != null) {
-            SET("area = #{area,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getProductionYear() != null) {
-            SET("production_year = #{productionYear,jdbcType=INTEGER}");
-        }
-        
-        if (record.getOwnerId() != null) {
-            SET("owner_id = #{ownerId,jdbcType=VARCHAR}");
+        if (record.getEnable() != null) {
+            SET("enable = #{enable,jdbcType=CHAR}");
         }
         
         if (record.getCreatedBy() != null) {
@@ -296,7 +198,7 @@ public class MovieSqlProvider {
         return SQL();
     }
 
-    protected void applyWhere(MovieCriteria example, boolean includeExamplePhrase) {
+    protected void applyWhere(CategoryCriteria example, boolean includeExamplePhrase) {
         if (example == null) {
             return;
         }

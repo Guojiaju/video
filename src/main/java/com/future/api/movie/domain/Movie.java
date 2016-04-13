@@ -2,8 +2,7 @@ package com.future.api.movie.domain;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-
-public class Movie extends AbstractAuditingEntity {
+public class Movie extends AbstractAuditingEntity{
 
     private String imgId;
 
@@ -18,6 +17,10 @@ public class Movie extends AbstractAuditingEntity {
     private String shortMessage;
 
     private String staror;
+
+    private String area;
+
+    private Integer productionYear;
 
     private String ownerId;
 
@@ -77,6 +80,22 @@ public class Movie extends AbstractAuditingEntity {
         this.staror = staror == null ? null : staror.trim();
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area == null ? null : area.trim();
+    }
+
+    public Integer getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(Integer productionYear) {
+        this.productionYear = productionYear;
+    }
+
     public String getOwnerId() {
         return ownerId;
     }
@@ -84,7 +103,6 @@ public class Movie extends AbstractAuditingEntity {
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId == null ? null : ownerId.trim();
     }
-
 
     @Override
     public String toString() {
@@ -99,6 +117,8 @@ public class Movie extends AbstractAuditingEntity {
         sb.append(", score=").append(score);
         sb.append(", shortMessage=").append(shortMessage);
         sb.append(", staror=").append(staror);
+        sb.append(", area=").append(area);
+        sb.append(", productionYear=").append(productionYear);
         sb.append(", ownerId=").append(ownerId);
         sb.append("]");
         return sb.toString();

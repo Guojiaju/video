@@ -33,10 +33,16 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/users",method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<User>> getAll(){
+    public ResponseEntity<?> getAll(){
         log.debug("REST request to get all Users");
         List<User> users =  userService.findAll();
-        return new ResponseEntity<>(users, HttpStatus.OK);
+        if(users !=null && users.size()>0){
+            return new ResponseEntity<>(users, HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
     /**

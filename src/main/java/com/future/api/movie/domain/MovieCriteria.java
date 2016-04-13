@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class MovieCriteria extends AbstractCriteria {
+public class MovieCriteria extends AbstractCriteria{
     protected String orderByClause;
 
     protected boolean distinct;
@@ -694,6 +694,136 @@ public class MovieCriteria extends AbstractCriteria {
             return (Criteria) this;
         }
 
+        public Criteria andAreaIsNull() {
+            addCriterion("area is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaIsNotNull() {
+            addCriterion("area is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaEqualTo(String value) {
+            addCriterion("area =", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaNotEqualTo(String value) {
+            addCriterion("area <>", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaGreaterThan(String value) {
+            addCriterion("area >", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaGreaterThanOrEqualTo(String value) {
+            addCriterion("area >=", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaLessThan(String value) {
+            addCriterion("area <", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaLessThanOrEqualTo(String value) {
+            addCriterion("area <=", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaLike(String value) {
+            addCriterion("area like", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaNotLike(String value) {
+            addCriterion("area not like", value, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaIn(List<String> values) {
+            addCriterion("area in", values, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaNotIn(List<String> values) {
+            addCriterion("area not in", values, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaBetween(String value1, String value2) {
+            addCriterion("area between", value1, value2, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaNotBetween(String value1, String value2) {
+            addCriterion("area not between", value1, value2, "area");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearIsNull() {
+            addCriterion("production_year is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearIsNotNull() {
+            addCriterion("production_year is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearEqualTo(Integer value) {
+            addCriterion("production_year =", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearNotEqualTo(Integer value) {
+            addCriterion("production_year <>", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearGreaterThan(Integer value) {
+            addCriterion("production_year >", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearGreaterThanOrEqualTo(Integer value) {
+            addCriterion("production_year >=", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearLessThan(Integer value) {
+            addCriterion("production_year <", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearLessThanOrEqualTo(Integer value) {
+            addCriterion("production_year <=", value, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearIn(List<Integer> values) {
+            addCriterion("production_year in", values, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearNotIn(List<Integer> values) {
+            addCriterion("production_year not in", values, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearBetween(Integer value1, Integer value2) {
+            addCriterion("production_year between", value1, value2, "productionYear");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductionYearNotBetween(Integer value1, Integer value2) {
+            addCriterion("production_year not between", value1, value2, "productionYear");
+            return (Criteria) this;
+        }
+
         public Criteria andOwnerIdIsNull() {
             addCriterion("owner_id is null");
             return (Criteria) this;
@@ -1061,6 +1191,11 @@ public class MovieCriteria extends AbstractCriteria {
 
         public Criteria andStarorLikeInsensitive(String value) {
             addCriterion("upper(staror) like", value.toUpperCase(), "staror");
+            return (Criteria) this;
+        }
+
+        public Criteria andAreaLikeInsensitive(String value) {
+            addCriterion("upper(area) like", value.toUpperCase(), "area");
             return (Criteria) this;
         }
 

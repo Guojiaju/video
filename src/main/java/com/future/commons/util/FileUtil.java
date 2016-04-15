@@ -3,7 +3,10 @@ package com.future.commons.util;
 import org.apache.log4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.List;
 
 /**
@@ -16,9 +19,70 @@ public class FileUtil {
 
     public static Logger logger = Logger.getLogger(FileUtil.class);
 
-    public static final String upload(MultipartFile file , String path){
+    /**
+     * upload files
+     *
+     * @param file
+     * @param path
+     * @param fileName
+     * @return
+     * @throws Exception
+     */
+    public static final boolean upload(MultipartFile file, String path, String fileName) throws Exception {
 
-        return null;
+        File targetFile = new File(path, fileName);
+        String newPath = path + "/" + fileName;
+        mkdirFolder(path);
+        if (!isExist(newPath)) {
+            file.transferTo(targetFile);
+            return true;
+        } else
+            return false;
+    }
+
+    /**
+     * download file
+     *
+     * @param path
+     * @param fileName
+     */
+    public static final void downloadNet(String path, String fileName, HttpServletResponse response) throws Exception {
+
+        int bytesum = 0;
+        int byteread = 0;
+
+        URL url = new URL("windine.blogdriver.com/logo.gif");
+
+        URLConnection conn = url.openConnection();
+        InputStream inStream = conn.getInputStream();
+        FileOutputStream fs = new FileOutputStream(path + fileName);
+
+        byte[] buffer = new byte[1204];
+        while ((byteread = inStream.read(buffer)) != -1) {
+            bytesum += byteread;
+            fs.write(buffer, 0, byteread);
+        }
+    }
+
+    public static final void downloadLocal(String path, String fileName, HttpServletResponse response) throws Exception {
+        // 文件的存放路径
+        File file = new File(path+"/"+fileName);
+        // 读到流中
+        InputStream is = new FileInputStream(file);
+        // 设置输出的格式
+        response.reset();
+        response.setContentType("application/octet-stream");
+        response.addHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        // 循环取出流中的数据
+        OutputStream os = response.getOutputStream();
+        byte[] buffer = new byte[1024];
+        int len;
+        while ((len = is.read(buffer)) > 0){
+            os.write(buffer, 0, len);
+        }
+        os.flush();
+        os.close();
+        is.close();
     }
 
     /**
@@ -28,15 +92,15 @@ public class FileUtil {
      */
     public static boolean isExist(String filePath) {
         File file = null;
-        boolean boo = false;
+        boolean bool = false;
         try {
             file = new File(filePath);
-            boo = file.exists();
+            bool = file.exists();
         } catch (Exception e) {
             e.printStackTrace();
-            boo = false;
+            bool = false;
         }
-        return boo;
+        return bool;
     }
 
     /**
@@ -45,12 +109,12 @@ public class FileUtil {
      * @param strFilePath
      *
      */
-    public boolean mkdirFolder(String strFilePath) {
+    public static boolean mkdirFolder(String strFilePath) {
         boolean bool = false;
         try {
             File file = new File(strFilePath.toString());
             if (!file.exists()) {
-                bool = file.mkdir();
+                bool = file.mkdirs();
             }
         } catch (Exception e) {
             logger.error("Create folder failure" + e.getLocalizedMessage());

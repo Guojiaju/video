@@ -12,4 +12,6 @@ import com.future.commons.service.BaseService;
  */
 public interface ImageService extends BaseService<Image,ImageCriteria> {
 
+    Image insert (Image image);
+
 }

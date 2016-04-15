@@ -19,7 +19,6 @@ dataSource:
 # SPRING PROFILES
 spring:       
     # HTTP ENCODING
-
     http:
         encoding.charset: UTF-8
         encoding.enable: true

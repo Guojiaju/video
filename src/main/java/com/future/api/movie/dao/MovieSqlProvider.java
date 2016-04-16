@@ -45,6 +45,10 @@ public class MovieSqlProvider {
             VALUES("id", "#{id,jdbcType=VARCHAR}");
         }
         
+        if (record.getUrl() != null) {
+            VALUES("url", "#{url,jdbcType=VARCHAR}");
+        }
+        
         if (record.getImgId() != null) {
             VALUES("img_id", "#{imgId,jdbcType=VARCHAR}");
         }
@@ -111,6 +115,7 @@ public class MovieSqlProvider {
         } else {
             SELECT("id");
         }
+        SELECT("url");
         SELECT("img_id");
         SELECT("name");
         SELECT("type");
@@ -144,6 +149,10 @@ public class MovieSqlProvider {
         
         if (record.getId() != null) {
             SET("id = #{record.id,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getUrl() != null) {
+            SET("url = #{record.url,jdbcType=VARCHAR}");
         }
         
         if (record.getImgId() != null) {
@@ -211,6 +220,7 @@ public class MovieSqlProvider {
         UPDATE("t_movie");
         
         SET("id = #{record.id,jdbcType=VARCHAR}");
+        SET("url = #{record.url,jdbcType=VARCHAR}");
         SET("img_id = #{record.imgId,jdbcType=VARCHAR}");
         SET("name = #{record.name,jdbcType=VARCHAR}");
         SET("type = #{record.type,jdbcType=VARCHAR}");
@@ -234,6 +244,10 @@ public class MovieSqlProvider {
     public String updateByPrimaryKeySelective(Movie record) {
         BEGIN();
         UPDATE("t_movie");
+        
+        if (record.getUrl() != null) {
+            SET("url = #{url,jdbcType=VARCHAR}");
+        }
         
         if (record.getImgId() != null) {
             SET("img_id = #{imgId,jdbcType=VARCHAR}");

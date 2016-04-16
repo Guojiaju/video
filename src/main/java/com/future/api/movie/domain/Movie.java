@@ -2,7 +2,12 @@ package com.future.api.movie.domain;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-public class Movie extends AbstractAuditingEntity{
+import java.io.Serializable;
+import java.util.Date;
+
+public class Movie extends AbstractAuditingEntity {
+
+    private String url;
 
     private String imgId;
 
@@ -23,6 +28,15 @@ public class Movie extends AbstractAuditingEntity{
     private Integer productionYear;
 
     private String ownerId;
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
+    }
 
     public String getImgId() {
         return imgId;
@@ -104,12 +118,14 @@ public class Movie extends AbstractAuditingEntity{
         this.ownerId = ownerId == null ? null : ownerId.trim();
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
+        sb.append(", url=").append(url);
         sb.append(", imgId=").append(imgId);
         sb.append(", name=").append(name);
         sb.append(", type=").append(type);

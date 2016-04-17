@@ -1,4 +1,4 @@
-package com.future.commons.service;
+package com.future.commons.service.imp;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -8,6 +8,7 @@ import java.util.List;
 import com.future.commons.dao.BaseDao;
 import com.future.commons.domain.AbstractCriteria;
 import com.future.commons.domain.AbstractEntity;
+import com.future.commons.service.BaseService;
 import com.future.commons.util.IdGen;
 import org.springframework.beans.BeanUtils;
 import org.springframework.transaction.annotation.Transactional;

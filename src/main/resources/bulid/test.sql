@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Test
+Source Server         : test
 Source Server Version : 50528
 Source Host           : localhost:3306
 Source Database       : test
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2016-04-15 17:53:05
+Date: 2016-04-18 07:43:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,10 +20,10 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_category`;
 CREATE TABLE `t_category` (
-  `id` varchar(55) NOT NULL,
-  `category_name` varchar(255) DEFAULT NULL,
-  `parent_id` varchar(255) DEFAULT NULL,
-  `enable` enum('ENABLE','DIASBLE') NOT NULL DEFAULT 'ENABLE',
+  `id` varchar(55) NOT NULL COMMENT 'id',
+  `category_name` varchar(255) DEFAULT NULL COMMENT '分类名称',
+  `parent_id` varchar(255) DEFAULT NULL COMMENT '父类id',
+  `enable` enum('ENABLE','DIASBLE') NOT NULL DEFAULT 'ENABLE' COMMENT '是否开启',
   `created_by` varchar(55) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
   `updated_by` varchar(55) DEFAULT NULL,
@@ -40,11 +40,11 @@ CREATE TABLE `t_category` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_image`;
 CREATE TABLE `t_image` (
-  `id` varchar(55) NOT NULL,
-  `type` varchar(20) DEFAULT NULL,
-  `image_name` varchar(100) DEFAULT NULL,
-  `local_path` varchar(255) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
+  `id` varchar(55) NOT NULL COMMENT 'id',
+  `type` varchar(20) DEFAULT NULL COMMENT '图片类型',
+  `image_name` varchar(100) DEFAULT NULL COMMENT '图片名称',
+  `local_path` varchar(255) DEFAULT NULL COMMENT '本地路径',
+  `url` varchar(255) DEFAULT NULL COMMENT '访问url',
   `created_by` varchar(55) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
   `updated_by` varchar(55) DEFAULT NULL,
@@ -246,17 +246,18 @@ INSERT INTO `t_image` VALUES ('cbc299394bb14c86be55fb09fcdfa5af', null, null, 'D
 -- ----------------------------
 DROP TABLE IF EXISTS `t_movie`;
 CREATE TABLE `t_movie` (
-  `id` varchar(55) NOT NULL,
-  `img_id` varchar(55) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `director` varchar(255) DEFAULT NULL,
-  `score` varchar(255) NOT NULL,
-  `short_message` varchar(255) NOT NULL,
-  `staror` varchar(255) DEFAULT NULL,
-  `area` varchar(55) DEFAULT NULL,
-  `production_year` int(4) DEFAULT NULL,
-  `owner_id` varchar(55) NOT NULL,
+  `id` varchar(55) NOT NULL COMMENT 'id',
+  `url` varchar(500) DEFAULT NULL COMMENT 'url链接',
+  `img_id` varchar(55) NOT NULL COMMENT '图片id',
+  `name` varchar(255) NOT NULL COMMENT '影视名称',
+  `type` varchar(255) NOT NULL COMMENT '类型',
+  `director` varchar(255) DEFAULT NULL COMMENT '导演',
+  `score` varchar(255) NOT NULL COMMENT '评分',
+  `short_message` varchar(255) NOT NULL COMMENT '简介',
+  `staror` varchar(255) DEFAULT NULL COMMENT '主演',
+  `area` varchar(55) DEFAULT NULL COMMENT '地区',
+  `production_year` int(4) DEFAULT NULL COMMENT '制作年份',
+  `owner_id` varchar(55) NOT NULL COMMENT '所有者',
   `created_by` varchar(55) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
   `updated_by` varchar(55) DEFAULT NULL,
@@ -267,200 +268,200 @@ CREATE TABLE `t_movie` (
 -- ----------------------------
 -- Records of t_movie
 -- ----------------------------
-INSERT INTO `t_movie` VALUES ('1', '1', 'dfs', 'carouselBg', 'sdf', '11', 'sdfs', 'sdfsd', null, null, '123', null, '2016-04-05', null, null);
-INSERT INTO `t_movie` VALUES ('10', '10', 'sdf', 'likeMovie', 'sf', '7', 'sf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('100', '100', 'sdfsd', 'artCarousel', null, '4', 'ad', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('101', '101', 'sdf', 'artCarousel', null, '5', 'ds', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('102', '102', 'sf', 'artCarousel', null, '3', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('103', '103', 'sdf', 'artCarousel', null, '4', 'df', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('104', '104', 'sdf', 'artCarousel', null, '4', 'af', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('105', '105', 'sdf', 'art', null, '5', 'sd', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('106', '106', 'sdf', 'art', null, '6', 'af', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('107', '107', 'sdf', 'art', null, '3', 'df', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('108', '108', 'sdf', 'art', null, '2', 'w', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('109', '109', 'sdf', 'art', null, '4', 'sdf', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('11', '11', 'sdf', 'likeMovie', null, '4', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('110', '110', 'sdf', 'art', null, '6', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('111', '111', 'sdf', 'art', null, '7', 'sdf', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('112', '112', 'sdf', 'art', null, '7', 'sf', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('113', '113', 'sdf', 'art', null, '4', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('114', '114', 'sdf', 'art', null, '2', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('115', '115', 'sdf', 'art', null, '4', 'sf', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('116', '116', 'sdf', 'art', null, '7', 'sf', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('117', '117', 'adf', 'animationCarousel', null, '5', 'dfg', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('118', '118', 'adf', 'animationCarousel', null, '6', 'fg', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('119', '119', 'afd', 'animationCarousel', null, '7', 'dfg', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('12', '12', 'sdf', 'likeMovie', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('120', '120', 'adf', 'animationCarousel', null, '9', 'dg', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('121', '121', 'af', 'animationCarousel', null, '4', 'g', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('122', '122', 'af', 'animationCarousel', null, '4', 'd', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('123', '123', 'df', 'animationCarousel', null, '7', 'g', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('124', '124', 'sdf', 'newAnimation', null, '6', 'sdf', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('125', '125', 'sf', 'newAnimation', null, '8', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('126', '126', 'sdf', 'newAnimation', null, '9', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('127', '127', 'adf', 'newAnimation', null, '6', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('128', '128', 'af', 'newAnimation', null, '5', 'sdf', null, null, null, '45', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('129', '129', 'sdf', 'newAnimation', null, '7', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('13', '13', 'sdf', 'likeMovie', null, '6', 'sf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('130', '130', 'sa', 'newAnimation', null, '8', 'sdf', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('131', '131', 'af', 'newAnimation', null, '3', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('132', '132', 'sd', 'newAnimation', null, '4', 'df', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('133', '133', 'adf', 'newAnimation', null, '3', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('134', '134', 'saf', 'newAnimation', null, '3', 'sdf', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('135', '135', 'df', 'newAnimation', null, '9', 'sdf', null, null, null, '9', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('136', '136', 'df', 'popularAnimation', null, '4', 'fg', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('137', '137', 'sdf', 'popularAnimation', null, '4', 'df', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('138', '138', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('139', '139', 'sd', 'popularAnimation', null, '4', 'sf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('14', '14', 'sdf', 'likeMovie', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('140', '140', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('141', '141', 'df', 'popularAnimation', null, '4', 'sd', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('142', '142', 'adf', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('143', '143', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('144', '144', 'df', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('145', '145', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('146', '146', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('147', '147', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('148', '148', 'sdf', 'popularAnimation', null, '4', 'fd', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('149', '149', 'gf', 'fitnessCarousel', null, '5', 'dgf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('15', '15', 'sdf', 'likeMovie', null, '45', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('150', '150', 'sdf', 'fitnessCarousel', null, '5', 'dfg', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('151', '151', 'sdf', 'fitnessCarousel', null, '5', 'df', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('152', '152', 'sdf', 'fitnessCarousel', null, '5', 'g', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('153', '153', 'sf', 'fitnessCarousel', null, '5', 'fd', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('154', '154', 'sf', 'fitnessCarousel', null, '5', 'df', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('155', '155', 'sf', 'fitnessCarousel', null, '5', 'df', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('156', '156', 'sdf', 'fitness', null, '56', 'gh', null, null, null, '9', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('157', '157', 'sdf', 'fitness', null, '2', 'gfh', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('158', '158', 'sd', 'fitness', null, '3', 'fgh', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('159', '159', 'sd', 'fitness', null, '8', 'fgh', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('16', '16', 'sdf', 'likeMovie', null, '23', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('160', '160', 'sf', 'fitness', null, '2', 'fgh', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('161', '161', 'sf', 'fitness', null, '1', 'fh', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('162', '162', 'df', 'fitness', null, '7', 'fgh', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('163', '163', 'sdf', 'fitness', null, '1', 'fh', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('164', '164', 'sf', 'fitness', null, '3', 'fh', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('165', '165', 'sf', 'fitness', null, '1', 'fh', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('166', '166', 'sdf', 'fitness', null, '6', 'fgh', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('167', '167', 'sdf', 'fitness', null, '2', 'gh', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('168', '168', 'sf', 'fitness', null, '1', 'fhg', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('169', '169', 'sf', 'fitness', null, '4', 'fh', null, null, null, '9', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('17', '17', 'sdf', 'likeMovie', null, '2', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('170', '170', 'ssd', 'teach', null, '1', 'sd', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('171', '171', 'df', 'teach', null, '2', 'sdf', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('172', '172', 'sdf', 'teach', null, '1', 'sd', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('173', '173', 'sdf', 'teach', null, '1', 'sd', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('174', '174', 'sd', 'teach', null, '1', 'd', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('175', '175', 'dsf', 'teach', null, '1', 'f', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('176', '176', 'sdf', 'teach', null, '1', 'a', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('177', '177', 'sdfsd', 'teach', null, '1', 'df', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('178', '178', 'ds', 'teach', null, '1', 'sd', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('179', '179', 'hd', 'teach', null, '1', 'we', null, null, null, '9', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('18', '18', 'sf', 'likeMovie', null, '1', 'sdf', null, null, null, '233', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('180', '180', 'qe', 'teach', null, '1', 'we', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('181', '181', 'df', 'teach', null, '1', 'g', null, null, null, '1', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('182', '182', 'df', 'teach', null, '1', 'd', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('19', '19', 'sf', 'likeMovie', null, '2', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('2', '2', 'dfd', 'carouselBg', 'sdf', '11', 'sdfs', 'sdf', null, null, '5465', null, '2016-04-06', null, null);
-INSERT INTO `t_movie` VALUES ('20', '20', 'sf', 'likeMovie', null, '3', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('21', '21', 'sdf', 'likeMovie', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('22', '22', 'sg', 'likeMovie', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('23', '23', 'sdf', 'likeMovie', null, '6', 'df', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('24', '24', 'we', 'likeMovie', null, '7', 'sdf', null, null, null, '43', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('25', '25', 'gs', 'likeMovie', null, '8', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('26', '26', 'sg', 'likeMovie', null, '9', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('27', '27', 'sgs', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('28', '28', 'sg', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('29', '29', 'sg', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('3', '3', 'df', 'tv', 'sdf', '12', 'sdfsd', 'sdf', null, null, 'sdf', null, '2016-04-19', null, null);
-INSERT INTO `t_movie` VALUES ('30', '30', 'xcv', 'likeMovie', null, '0', 'dsf', null, null, null, '34', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('31', '31', 'adf', 'liquidCarousel', null, '23', 'dfs', null, null, null, '34', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('32', '32', 'sd', 'liquidCarousel', null, '12', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('33', '33', 'sdf', 'liquidCarousel', null, '22', 'df', null, null, null, '43', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('34', '34', 'sdf', 'liquidCarousel', null, '1', 'dsf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('35', '35', 'sdf', 'liquidCarousel', null, '2', 'sdf', null, null, null, '123', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('36', '36', 'sdf', 'liquidCarousel', null, '3', 'sdf', null, null, null, '32', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('37', '37', 'sd', 'liquidCarousel', null, '4', 'g', null, null, null, '34', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('38', '38', 'sd', 'liquidCarousel', null, '5', 'ds', null, null, null, '34', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('39', '39', 'df', 'liquidCarousel', null, '6', 'sdf', null, null, null, '34', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('4', '4', 'df', 'carouselBg', 'sdf', '2', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-25', null, null);
-INSERT INTO `t_movie` VALUES ('40', '40', 'df', 'liquidCarousel', null, '7', 'we', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('41', '41', 'df', 'liquidCarousel', null, '4', 'wer', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('42', '42', 'df', 'liquidCarousel', null, '3', 'gs', null, null, null, '53', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('43', '43', 'df', 'liquidCarousel', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('44', '44', 'df', 'liquidCarousel', null, '6', 'gsd', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('45', '45', 'dsf', 'liquidCarousel', null, '7', 'gs', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('46', '46', 'df', 'liquidCarousel', null, '9', 'we', null, null, null, '234', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('47', '47', 'sdf', 'oldMovie', null, '5', 'dg', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('48', '48', 'sdf', 'oldMovie', null, '4', 'df', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('49', '49', 'saf', 'oldMovie', null, '5', 'dfg', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('5', '5', '大话西游', 'likeMovie', 'ddf', '8', 'sfs', 'dfds', null, null, 'sdf', null, '2016-04-14', null, null);
-INSERT INTO `t_movie` VALUES ('50', '50', 'sdf', 'oldMovie', null, '6', 'dfg', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('51', '51', 'sdf', 'oldMovie', null, '3', 'dg', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('52', '52', 'dsf', 'oldMovie', null, '4', 'gd', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('53', '53', 'sdf', 'newTv', null, '3', 'sdf', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('54', '54', 'sdf', 'newTv', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('55', '55', 'sdf', 'newTv', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('56', '56', 'sdf', 'newTv', null, '6', 'sdf', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('57', '57', 'sdf', 'newTv', null, '7', 'gd', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('58', '58', 'sdf', 'newTv', null, '2', 'sd', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('59', '59', 'sdf', 'newTv', null, '3', 'we', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('6', '6', 'sdf', 'likeMovie', 'df', '7', 'dg', 'dfg', null, null, 'fdg', null, '2016-04-20', null, null);
-INSERT INTO `t_movie` VALUES ('60', '60', 'sdf', 'newTv', null, '4', 'gg', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('61', '61', 'sdf', 'newTv', null, '5', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('62', '62', 'sdf', 'koreaTv', null, '6', 'adf', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('63', '63', 'sdf', 'koreaTv', null, '7', 'gdd', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('64', '64', 'sdf', 'koreaTv', null, '2', 'we', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('65', '65', 'sdf', 'koreaTv', null, '3', 'dfg', null, null, null, '9', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('66', '66', 'sdf', 'koreaTv', null, '5', 'wer', null, null, null, '0', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('67', '67', 'sf', 'koreaTv', null, '6', 'wer', null, null, null, '8', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('68', '68', 'ad', 'koreaTv', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('69', '69', 'sdf', 'koreaTv', null, '7', 'sa', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('7', '7', 'dg', 'likeMovie', 'sf', '6', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-20', null, null);
-INSERT INTO `t_movie` VALUES ('70', '70', 'adf', 'koreaTv', null, '4', 'sdf', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('71', '71', 'sdf', 'englishTv', null, '3', 'sdf', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('72', '72', 'adf', 'englishTv', null, '4', 'dsf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('73', '73', 'df', 'englishTv', null, '5', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('74', '74', 'df', 'englishTv', null, '2', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('75', '75', 'sd', 'englishTv', null, '3', 'aa', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('76', '76', 'sa', 'englishTv', null, '5', 'we', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('77', '77', 'sdf', 'englishTv', null, '3', 'df', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('78', '78', 'ad', 'englishTv', null, '5', 'gd', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('79', '79', 'sf', 'englishTv', null, '6', 'gd', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('8', '8', 'gd', 'likeMovie', 'sdf', '4', 'sdf', 'sf', null, null, 'sdf', null, '2016-04-20', null, null);
-INSERT INTO `t_movie` VALUES ('80', '80', 'sdf', 'hkTv', null, '6', 'sd', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('81', '81', 'sdf', 'hkTv', null, '4', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('82', '82', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('83', '83', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('84', '84', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('85', '85', 'sdf', 'hkTv', null, '3', 'sfd', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('86', '86', 'gsdg', 'hkTv', null, '6', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('87', '87', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('88', '88', 'sd', 'hkTv', null, '6', 'sf', null, null, null, '7', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('89', '89', 'sdf', 'movie', null, '6', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('9', '9', 'sdf', 'likeMovie', 'sdf', '7', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-12', null, null);
-INSERT INTO `t_movie` VALUES ('90', '90', 'sdf', 'movie', null, '4', 'sf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('91', '91', 'sdf', 'movie', null, '7', 'sd', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('92', '92', 'sd', 'movie', null, '8', 'df', null, null, null, '6', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('93', '93', 'sdf', 'movie', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('94', '94', 'sdf', 'movie', null, '6', 'sdf', null, null, null, '23', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('95', '95', 'sdf', 'movie', null, '8', 'sdf', null, null, null, '4', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('96', '96', 'dsf', 'movie', null, '9', 'sd', null, null, null, '5', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('97', '97', 'sdf', 'movie', null, '0', 'sdf', null, null, null, '2', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('98', '98', 'sdf', 'movie', null, '7', 'sdf', null, null, null, '3', null, null, null, null);
-INSERT INTO `t_movie` VALUES ('99', '99', 'sdf', 'movie', null, '3', 'sd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('1', null, '1', 'dfs', 'carouselBg', 'sdf', '11', 'sdfs', 'sdfsd', null, null, '123', null, '2016-04-05', null, null);
+INSERT INTO `t_movie` VALUES ('10', null, '10', 'sdf', 'likeMovie', 'sf', '7', 'sf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('100', null, '100', 'sdfsd', 'artCarousel', null, '4', 'ad', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('101', null, '101', 'sdf', 'artCarousel', null, '5', 'ds', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('102', null, '102', 'sf', 'artCarousel', null, '3', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('103', null, '103', 'sdf', 'artCarousel', null, '4', 'df', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('104', null, '104', 'sdf', 'artCarousel', null, '4', 'af', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('105', null, '105', 'sdf', 'art', null, '5', 'sd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('106', null, '106', 'sdf', 'art', null, '6', 'af', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('107', null, '107', 'sdf', 'art', null, '3', 'df', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('108', null, '108', 'sdf', 'art', null, '2', 'w', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('109', null, '109', 'sdf', 'art', null, '4', 'sdf', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('11', null, '11', 'sdf', 'likeMovie', null, '4', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('110', null, '110', 'sdf', 'art', null, '6', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('111', null, '111', 'sdf', 'art', null, '7', 'sdf', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('112', null, '112', 'sdf', 'art', null, '7', 'sf', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('113', null, '113', 'sdf', 'art', null, '4', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('114', null, '114', 'sdf', 'art', null, '2', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('115', null, '115', 'sdf', 'art', null, '4', 'sf', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('116', null, '116', 'sdf', 'art', null, '7', 'sf', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('117', null, '117', 'adf', 'animationCarousel', null, '5', 'dfg', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('118', null, '118', 'adf', 'animationCarousel', null, '6', 'fg', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('119', null, '119', 'afd', 'animationCarousel', null, '7', 'dfg', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('12', null, '12', 'sdf', 'likeMovie', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('120', null, '120', 'adf', 'animationCarousel', null, '9', 'dg', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('121', null, '121', 'af', 'animationCarousel', null, '4', 'g', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('122', null, '122', 'af', 'animationCarousel', null, '4', 'd', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('123', null, '123', 'df', 'animationCarousel', null, '7', 'g', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('124', null, '124', 'sdf', 'newAnimation', null, '6', 'sdf', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('125', null, '125', 'sf', 'newAnimation', null, '8', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('126', null, '126', 'sdf', 'newAnimation', null, '9', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('127', null, '127', 'adf', 'newAnimation', null, '6', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('128', null, '128', 'af', 'newAnimation', null, '5', 'sdf', null, null, null, '45', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('129', null, '129', 'sdf', 'newAnimation', null, '7', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('13', null, '13', 'sdf', 'likeMovie', null, '6', 'sf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('130', null, '130', 'sa', 'newAnimation', null, '8', 'sdf', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('131', null, '131', 'af', 'newAnimation', null, '3', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('132', null, '132', 'sd', 'newAnimation', null, '4', 'df', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('133', null, '133', 'adf', 'newAnimation', null, '3', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('134', null, '134', 'saf', 'newAnimation', null, '3', 'sdf', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('135', null, '135', 'df', 'newAnimation', null, '9', 'sdf', null, null, null, '9', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('136', null, '136', 'df', 'popularAnimation', null, '4', 'fg', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('137', null, '137', 'sdf', 'popularAnimation', null, '4', 'df', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('138', null, '138', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('139', null, '139', 'sd', 'popularAnimation', null, '4', 'sf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('14', null, '14', 'sdf', 'likeMovie', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('140', null, '140', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('141', null, '141', 'df', 'popularAnimation', null, '4', 'sd', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('142', null, '142', 'adf', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('143', null, '143', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('144', null, '144', 'df', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('145', null, '145', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('146', null, '146', 'sd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('147', null, '147', 'fd', 'popularAnimation', null, '4', 'sdf', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('148', null, '148', 'sdf', 'popularAnimation', null, '4', 'fd', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('149', null, '149', 'gf', 'fitnessCarousel', null, '5', 'dgf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('15', null, '15', 'sdf', 'likeMovie', null, '45', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('150', null, '150', 'sdf', 'fitnessCarousel', null, '5', 'dfg', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('151', null, '151', 'sdf', 'fitnessCarousel', null, '5', 'df', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('152', null, '152', 'sdf', 'fitnessCarousel', null, '5', 'g', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('153', null, '153', 'sf', 'fitnessCarousel', null, '5', 'fd', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('154', null, '154', 'sf', 'fitnessCarousel', null, '5', 'df', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('155', null, '155', 'sf', 'fitnessCarousel', null, '5', 'df', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('156', null, '156', 'sdf', 'fitness', null, '56', 'gh', null, null, null, '9', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('157', null, '157', 'sdf', 'fitness', null, '2', 'gfh', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('158', null, '158', 'sd', 'fitness', null, '3', 'fgh', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('159', null, '159', 'sd', 'fitness', null, '8', 'fgh', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('16', null, '16', 'sdf', 'likeMovie', null, '23', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('160', null, '160', 'sf', 'fitness', null, '2', 'fgh', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('161', null, '161', 'sf', 'fitness', null, '1', 'fh', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('162', null, '162', 'df', 'fitness', null, '7', 'fgh', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('163', null, '163', 'sdf', 'fitness', null, '1', 'fh', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('164', null, '164', 'sf', 'fitness', null, '3', 'fh', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('165', null, '165', 'sf', 'fitness', null, '1', 'fh', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('166', null, '166', 'sdf', 'fitness', null, '6', 'fgh', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('167', null, '167', 'sdf', 'fitness', null, '2', 'gh', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('168', null, '168', 'sf', 'fitness', null, '1', 'fhg', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('169', null, '169', 'sf', 'fitness', null, '4', 'fh', null, null, null, '9', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('17', null, '17', 'sdf', 'likeMovie', null, '2', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('170', null, '170', 'ssd', 'teach', null, '1', 'sd', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('171', null, '171', 'df', 'teach', null, '2', 'sdf', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('172', null, '172', 'sdf', 'teach', null, '1', 'sd', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('173', null, '173', 'sdf', 'teach', null, '1', 'sd', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('174', null, '174', 'sd', 'teach', null, '1', 'd', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('175', null, '175', 'dsf', 'teach', null, '1', 'f', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('176', null, '176', 'sdf', 'teach', null, '1', 'a', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('177', null, '177', 'sdfsd', 'teach', null, '1', 'df', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('178', null, '178', 'ds', 'teach', null, '1', 'sd', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('179', null, '179', 'hd', 'teach', null, '1', 'we', null, null, null, '9', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('18', null, '18', 'sf', 'likeMovie', null, '1', 'sdf', null, null, null, '233', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('180', null, '180', 'qe', 'teach', null, '1', 'we', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('181', null, '181', 'df', 'teach', null, '1', 'g', null, null, null, '1', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('182', null, '182', 'df', 'teach', null, '1', 'd', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('19', null, '19', 'sf', 'likeMovie', null, '2', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('2', null, '2', 'dfd', 'carouselBg', 'sdf', '11', 'sdfs', 'sdf', null, null, '5465', null, '2016-04-06', null, null);
+INSERT INTO `t_movie` VALUES ('20', null, '20', 'sf', 'likeMovie', null, '3', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('21', null, '21', 'sdf', 'likeMovie', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('22', null, '22', 'sg', 'likeMovie', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('23', null, '23', 'sdf', 'likeMovie', null, '6', 'df', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('24', null, '24', 'we', 'likeMovie', null, '7', 'sdf', null, null, null, '43', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('25', null, '25', 'gs', 'likeMovie', null, '8', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('26', null, '26', 'sg', 'likeMovie', null, '9', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('27', null, '27', 'sgs', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('28', null, '28', 'sg', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('29', null, '29', 'sg', 'likeMovie', null, '0', 'sd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('3', null, '3', 'df', 'tv', 'sdf', '12', 'sdfsd', 'sdf', null, null, 'sdf', null, '2016-04-19', null, null);
+INSERT INTO `t_movie` VALUES ('30', null, '30', 'xcv', 'likeMovie', null, '0', 'dsf', null, null, null, '34', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('31', null, '31', 'adf', 'liquidCarousel', null, '23', 'dfs', null, null, null, '34', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('32', null, '32', 'sd', 'liquidCarousel', null, '12', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('33', null, '33', 'sdf', 'liquidCarousel', null, '22', 'df', null, null, null, '43', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('34', null, '34', 'sdf', 'liquidCarousel', null, '1', 'dsf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('35', null, '35', 'sdf', 'liquidCarousel', null, '2', 'sdf', null, null, null, '123', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('36', null, '36', 'sdf', 'liquidCarousel', null, '3', 'sdf', null, null, null, '32', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('37', null, '37', 'sd', 'liquidCarousel', null, '4', 'g', null, null, null, '34', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('38', null, '38', 'sd', 'liquidCarousel', null, '5', 'ds', null, null, null, '34', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('39', null, '39', 'df', 'liquidCarousel', null, '6', 'sdf', null, null, null, '34', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('4', null, '4', 'df', 'carouselBg', 'sdf', '2', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-25', null, null);
+INSERT INTO `t_movie` VALUES ('40', null, '40', 'df', 'liquidCarousel', null, '7', 'we', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('41', null, '41', 'df', 'liquidCarousel', null, '4', 'wer', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('42', null, '42', 'df', 'liquidCarousel', null, '3', 'gs', null, null, null, '53', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('43', null, '43', 'df', 'liquidCarousel', null, '5', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('44', null, '44', 'df', 'liquidCarousel', null, '6', 'gsd', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('45', null, '45', 'dsf', 'liquidCarousel', null, '7', 'gs', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('46', null, '46', 'df', 'liquidCarousel', null, '9', 'we', null, null, null, '234', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('47', null, '47', 'sdf', 'oldMovie', null, '5', 'dg', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('48', null, '48', 'sdf', 'oldMovie', null, '4', 'df', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('49', null, '49', 'saf', 'oldMovie', null, '5', 'dfg', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('5', null, '5', '大话西游', 'likeMovie', 'ddf', '8', 'sfs', 'dfds', null, null, 'sdf', null, '2016-04-14', null, null);
+INSERT INTO `t_movie` VALUES ('50', null, '50', 'sdf', 'oldMovie', null, '6', 'dfg', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('51', null, '51', 'sdf', 'oldMovie', null, '3', 'dg', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('52', null, '52', 'dsf', 'oldMovie', null, '4', 'gd', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('53', null, '53', 'sdf', 'newTv', null, '3', 'sdf', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('54', null, '54', 'sdf', 'newTv', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('55', null, '55', 'sdf', 'newTv', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('56', null, '56', 'sdf', 'newTv', null, '6', 'sdf', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('57', null, '57', 'sdf', 'newTv', null, '7', 'gd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('58', null, '58', 'sdf', 'newTv', null, '2', 'sd', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('59', null, '59', 'sdf', 'newTv', null, '3', 'we', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('6', null, '6', 'sdf', 'likeMovie', 'df', '7', 'dg', 'dfg', null, null, 'fdg', null, '2016-04-20', null, null);
+INSERT INTO `t_movie` VALUES ('60', null, '60', 'sdf', 'newTv', null, '4', 'gg', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('61', null, '61', 'sdf', 'newTv', null, '5', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('62', null, '62', 'sdf', 'koreaTv', null, '6', 'adf', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('63', null, '63', 'sdf', 'koreaTv', null, '7', 'gdd', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('64', null, '64', 'sdf', 'koreaTv', null, '2', 'we', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('65', null, '65', 'sdf', 'koreaTv', null, '3', 'dfg', null, null, null, '9', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('66', null, '66', 'sdf', 'koreaTv', null, '5', 'wer', null, null, null, '0', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('67', null, '67', 'sf', 'koreaTv', null, '6', 'wer', null, null, null, '8', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('68', null, '68', 'ad', 'koreaTv', null, '4', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('69', null, '69', 'sdf', 'koreaTv', null, '7', 'sa', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('7', null, '7', 'dg', 'likeMovie', 'sf', '6', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-20', null, null);
+INSERT INTO `t_movie` VALUES ('70', null, '70', 'adf', 'koreaTv', null, '4', 'sdf', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('71', null, '71', 'sdf', 'englishTv', null, '3', 'sdf', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('72', null, '72', 'adf', 'englishTv', null, '4', 'dsf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('73', null, '73', 'df', 'englishTv', null, '5', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('74', null, '74', 'df', 'englishTv', null, '2', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('75', null, '75', 'sd', 'englishTv', null, '3', 'aa', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('76', null, '76', 'sa', 'englishTv', null, '5', 'we', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('77', null, '77', 'sdf', 'englishTv', null, '3', 'df', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('78', null, '78', 'ad', 'englishTv', null, '5', 'gd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('79', null, '79', 'sf', 'englishTv', null, '6', 'gd', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('8', null, '8', 'gd', 'likeMovie', 'sdf', '4', 'sdf', 'sf', null, null, 'sdf', null, '2016-04-20', null, null);
+INSERT INTO `t_movie` VALUES ('80', null, '80', 'sdf', 'hkTv', null, '6', 'sd', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('81', null, '81', 'sdf', 'hkTv', null, '4', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('82', null, '82', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('83', null, '83', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('84', null, '84', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('85', null, '85', 'sdf', 'hkTv', null, '3', 'sfd', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('86', null, '86', 'gsdg', 'hkTv', null, '6', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('87', null, '87', 'sdf', 'hkTv', null, '6', 'sdf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('88', null, '88', 'sd', 'hkTv', null, '6', 'sf', null, null, null, '7', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('89', null, '89', 'sdf', 'movie', null, '6', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('9', null, '9', 'sdf', 'likeMovie', 'sdf', '7', 'sdf', 'sdf', null, null, 'sdf', null, '2016-04-12', null, null);
+INSERT INTO `t_movie` VALUES ('90', null, '90', 'sdf', 'movie', null, '4', 'sf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('91', null, '91', 'sdf', 'movie', null, '7', 'sd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('92', null, '92', 'sd', 'movie', null, '8', 'df', null, null, null, '6', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('93', null, '93', 'sdf', 'movie', null, '5', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('94', null, '94', 'sdf', 'movie', null, '6', 'sdf', null, null, null, '23', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('95', null, '95', 'sdf', 'movie', null, '8', 'sdf', null, null, null, '4', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('96', null, '96', 'dsf', 'movie', null, '9', 'sd', null, null, null, '5', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('97', null, '97', 'sdf', 'movie', null, '0', 'sdf', null, null, null, '2', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('98', null, '98', 'sdf', 'movie', null, '7', 'sdf', null, null, null, '3', null, null, null, null);
+INSERT INTO `t_movie` VALUES ('99', null, '99', 'sdf', 'movie', null, '3', 'sd', null, null, null, '5', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for t_resources
 -- ----------------------------
 DROP TABLE IF EXISTS `t_resources`;
 CREATE TABLE `t_resources` (
-  `id` varchar(55) NOT NULL,
-  `resource_name` varchar(255) DEFAULT NULL,
-  `enable` enum('ENABLE','DISABLE') DEFAULT 'ENABLE',
-  `created_by` varchar(55) DEFAULT NULL,
+  `id` varchar(55) CHARACTER SET utf8 NOT NULL COMMENT 'id',
+  `resource_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '资源名',
+  `enable` enum('ENABLE','DISABLE') CHARACTER SET utf8 DEFAULT 'ENABLE' COMMENT '是否开启',
+  `created_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `created_date` date DEFAULT NULL,
-  `updated_by` varchar(55) DEFAULT NULL,
+  `updated_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -474,12 +475,12 @@ CREATE TABLE `t_resources` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
-  `id` varchar(55) NOT NULL,
-  `role_name` varchar(255) DEFAULT NULL,
-  `enable` enum('DISABLE','ENABLE') DEFAULT 'ENABLE',
-  `created_by` varchar(55) DEFAULT NULL,
+  `id` varchar(55) CHARACTER SET utf8 NOT NULL COMMENT 'id',
+  `role_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '角色名',
+  `enable` enum('DISABLE','ENABLE') CHARACTER SET utf8 DEFAULT 'ENABLE' COMMENT '是否开启',
+  `created_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `created_date` date DEFAULT NULL,
-  `updated_by` varchar(55) DEFAULT NULL,
+  `updated_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -493,12 +494,12 @@ CREATE TABLE `t_role` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role_resources`;
 CREATE TABLE `t_role_resources` (
-  `id` varchar(55) NOT NULL,
-  `role_id` varchar(55) DEFAULT NULL,
+  `id` varchar(55) CHARACTER SET utf8 NOT NULL COMMENT 'id',
+  `role_id` varchar(55) CHARACTER SET utf8 DEFAULT NULL COMMENT '角色Id',
   `resource_id` varchar(55) DEFAULT NULL,
-  `created_by` varchar(55) DEFAULT NULL,
+  `created_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `created_date` date DEFAULT NULL,
-  `updated_by` varchar(55) DEFAULT NULL,
+  `updated_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -512,17 +513,17 @@ CREATE TABLE `t_role_resources` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
-  `id` varchar(55) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(55) DEFAULT NULL,
-  `img_url` varchar(55) DEFAULT NULL,
-  `mobile_phone` varchar(15) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `salt` varchar(255) DEFAULT NULL,
-  `enable` enum('Disable','Enable') DEFAULT 'Enable',
+  `id` varchar(55) NOT NULL COMMENT 'id',
+  `username` varchar(255) NOT NULL COMMENT '用户名',
+  `password` varchar(255) NOT NULL COMMENT '密码',
+  `name` varchar(55) DEFAULT NULL COMMENT '真实姓名',
+  `img_url` varchar(55) DEFAULT NULL COMMENT '图片id',
+  `mobile_phone` varchar(15) DEFAULT NULL COMMENT '手机号码',
+  `email` varchar(100) DEFAULT '' COMMENT '邮箱',
+  `salt` varchar(255) DEFAULT NULL COMMENT '密码盐',
+  `enable` enum('Disable','Enable') DEFAULT 'Enable' COMMENT '是否开启',
   `token` varchar(55) NOT NULL,
-  `login_time` date DEFAULT NULL,
+  `login_time` date DEFAULT NULL COMMENT '上次登陆时间',
   `created_by` varchar(55) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
   `updated_by` varchar(55) DEFAULT NULL,
@@ -541,12 +542,12 @@ INSERT INTO `t_user` VALUES ('test', 'xzc', 'xzc', 'xzc', null, null, null, null
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_role`;
 CREATE TABLE `t_user_role` (
-  `id` varchar(55) NOT NULL,
-  `user_id` varchar(55) DEFAULT NULL,
-  `role_id` varchar(55) DEFAULT NULL,
-  `created_by` varchar(55) DEFAULT NULL,
+  `id` varchar(55) NOT NULL COMMENT 'id',
+  `user_id` varchar(55) CHARACTER SET utf8 DEFAULT NULL COMMENT '用户id',
+  `role_id` varchar(55) CHARACTER SET utf8 DEFAULT NULL COMMENT '角色id',
+  `created_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `created_date` date DEFAULT NULL,
-  `updated_by` varchar(55) DEFAULT NULL,
+  `updated_by` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
   `updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

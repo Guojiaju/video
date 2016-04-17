@@ -5,7 +5,7 @@ import com.future.api.user.domain.User;
 import com.future.api.user.domain.UserCriteria;
 import com.future.api.user.service.UserService;
 import com.future.commons.dao.BaseDao;
-import com.future.commons.service.BaseServiceImpl;
+import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

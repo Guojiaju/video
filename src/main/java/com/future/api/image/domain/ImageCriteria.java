@@ -204,6 +204,146 @@ public class ImageCriteria extends AbstractCriteria{
             return (Criteria) this;
         }
 
+        public Criteria andTypeIsNull() {
+            addCriterion("type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIsNotNull() {
+            addCriterion("type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeEqualTo(String value) {
+            addCriterion("type =", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotEqualTo(String value) {
+            addCriterion("type <>", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeGreaterThan(String value) {
+            addCriterion("type >", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("type >=", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLessThan(String value) {
+            addCriterion("type <", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLessThanOrEqualTo(String value) {
+            addCriterion("type <=", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLike(String value) {
+            addCriterion("type like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotLike(String value) {
+            addCriterion("type not like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIn(List<String> values) {
+            addCriterion("type in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotIn(List<String> values) {
+            addCriterion("type not in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeBetween(String value1, String value2) {
+            addCriterion("type between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotBetween(String value1, String value2) {
+            addCriterion("type not between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameIsNull() {
+            addCriterion("image_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameIsNotNull() {
+            addCriterion("image_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameEqualTo(String value) {
+            addCriterion("image_name =", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameNotEqualTo(String value) {
+            addCriterion("image_name <>", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameGreaterThan(String value) {
+            addCriterion("image_name >", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameGreaterThanOrEqualTo(String value) {
+            addCriterion("image_name >=", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameLessThan(String value) {
+            addCriterion("image_name <", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameLessThanOrEqualTo(String value) {
+            addCriterion("image_name <=", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameLike(String value) {
+            addCriterion("image_name like", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameNotLike(String value) {
+            addCriterion("image_name not like", value, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameIn(List<String> values) {
+            addCriterion("image_name in", values, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameNotIn(List<String> values) {
+            addCriterion("image_name not in", values, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameBetween(String value1, String value2) {
+            addCriterion("image_name between", value1, value2, "imageName");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameNotBetween(String value1, String value2) {
+            addCriterion("image_name not between", value1, value2, "imageName");
+            return (Criteria) this;
+        }
+
         public Criteria andLocalPathIsNull() {
             addCriterion("local_path is null");
             return (Criteria) this;
@@ -606,6 +746,16 @@ public class ImageCriteria extends AbstractCriteria{
 
         public Criteria andIdLikeInsensitive(String value) {
             addCriterion("upper(id) like", value.toUpperCase(), "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLikeInsensitive(String value) {
+            addCriterion("upper(type) like", value.toUpperCase(), "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNameLikeInsensitive(String value) {
+            addCriterion("upper(image_name) like", value.toUpperCase(), "imageName");
             return (Criteria) this;
         }
 

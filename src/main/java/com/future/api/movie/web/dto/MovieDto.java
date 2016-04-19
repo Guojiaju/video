@@ -1,11 +1,14 @@
-package com.future.api.movie.domain;
+package com.future.api.movie.web.dto;
 
 import com.future.commons.domain.AbstractAuditingEntity;
 
-import java.io.Serializable;
-import java.util.Date;
-
-public class Movie extends AbstractAuditingEntity {
+/**
+ * MovieDto
+ *
+ * @author Eric.guo
+ * @date 2016/4/16 19:16
+ */
+public class MovieDto extends AbstractAuditingEntity{
 
     private String url;
 
@@ -29,13 +32,12 @@ public class Movie extends AbstractAuditingEntity {
 
     private String ownerId;
 
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
+        this.url = url;
     }
 
     public String getImgId() {
@@ -43,7 +45,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setImgId(String imgId) {
-        this.imgId = imgId == null ? null : imgId.trim();
+        this.imgId = imgId;
     }
 
     public String getName() {
@@ -51,7 +53,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getType() {
@@ -59,7 +61,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type;
     }
 
     public String getDirector() {
@@ -67,7 +69,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setDirector(String director) {
-        this.director = director == null ? null : director.trim();
+        this.director = director;
     }
 
     public String getScore() {
@@ -75,7 +77,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setScore(String score) {
-        this.score = score == null ? null : score.trim();
+        this.score = score;
     }
 
     public String getShortMessage() {
@@ -83,7 +85,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setShortMessage(String shortMessage) {
-        this.shortMessage = shortMessage == null ? null : shortMessage.trim();
+        this.shortMessage = shortMessage;
     }
 
     public String getStaror() {
@@ -91,7 +93,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setStaror(String staror) {
-        this.staror = staror == null ? null : staror.trim();
+        this.staror = staror;
     }
 
     public String getArea() {
@@ -99,7 +101,7 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setArea(String area) {
-        this.area = area == null ? null : area.trim();
+        this.area = area;
     }
 
     public Integer getProductionYear() {
@@ -115,28 +117,6 @@ public class Movie extends AbstractAuditingEntity {
     }
 
     public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId == null ? null : ownerId.trim();
-    }
-
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", url=").append(url);
-        sb.append(", imgId=").append(imgId);
-        sb.append(", name=").append(name);
-        sb.append(", type=").append(type);
-        sb.append(", director=").append(director);
-        sb.append(", score=").append(score);
-        sb.append(", shortMessage=").append(shortMessage);
-        sb.append(", staror=").append(staror);
-        sb.append(", area=").append(area);
-        sb.append(", productionYear=").append(productionYear);
-        sb.append(", ownerId=").append(ownerId);
-        sb.append("]");
-        return sb.toString();
+        this.ownerId = ownerId;
     }
 }

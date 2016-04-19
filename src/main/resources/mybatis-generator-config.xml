@@ -68,7 +68,7 @@
 		</javaClientGenerator>
 
 		<!-- 配置表信息 -->
-		<table schema="Test" tableName="t_category" domainObjectName="Category" />
+		<table schema="Test" tableName="t_image" domainObjectName="Image" />
 
 	</context>
 </generatorConfiguration>  

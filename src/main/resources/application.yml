@@ -31,6 +31,9 @@ spring:
         size :100M
         maxFileSize : 10M
         maxRequestSize: 10M
+    # File folder
+    file:
+        path: D:/test/images
 
 # MyBatis
 mybatis:

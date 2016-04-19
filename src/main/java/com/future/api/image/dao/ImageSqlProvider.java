@@ -45,6 +45,14 @@ public class ImageSqlProvider {
             VALUES("id", "#{id,jdbcType=VARCHAR}");
         }
         
+        if (record.getType() != null) {
+            VALUES("type", "#{type,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImageName() != null) {
+            VALUES("image_name", "#{imageName,jdbcType=VARCHAR}");
+        }
+        
         if (record.getLocalPath() != null) {
             VALUES("local_path", "#{localPath,jdbcType=VARCHAR}");
         }
@@ -79,6 +87,8 @@ public class ImageSqlProvider {
         } else {
             SELECT("id");
         }
+        SELECT("type");
+        SELECT("image_name");
         SELECT("local_path");
         SELECT("url");
         SELECT("created_by");
@@ -104,6 +114,14 @@ public class ImageSqlProvider {
         
         if (record.getId() != null) {
             SET("id = #{record.id,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getType() != null) {
+            SET("type = #{record.type,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImageName() != null) {
+            SET("image_name = #{record.imageName,jdbcType=VARCHAR}");
         }
         
         if (record.getLocalPath() != null) {
@@ -139,6 +157,8 @@ public class ImageSqlProvider {
         UPDATE("t_image");
         
         SET("id = #{record.id,jdbcType=VARCHAR}");
+        SET("type = #{record.type,jdbcType=VARCHAR}");
+        SET("image_name = #{record.imageName,jdbcType=VARCHAR}");
         SET("local_path = #{record.localPath,jdbcType=VARCHAR}");
         SET("url = #{record.url,jdbcType=VARCHAR}");
         SET("created_by = #{record.createdBy,jdbcType=VARCHAR}");
@@ -154,6 +174,14 @@ public class ImageSqlProvider {
     public String updateByPrimaryKeySelective(Image record) {
         BEGIN();
         UPDATE("t_image");
+        
+        if (record.getType() != null) {
+            SET("type = #{type,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getImageName() != null) {
+            SET("image_name = #{imageName,jdbcType=VARCHAR}");
+        }
         
         if (record.getLocalPath() != null) {
             SET("local_path = #{localPath,jdbcType=VARCHAR}");

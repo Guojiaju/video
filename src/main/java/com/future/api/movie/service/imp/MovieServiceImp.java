@@ -5,7 +5,7 @@ import com.future.api.movie.domain.Movie;
 import com.future.api.movie.domain.MovieCriteria;
 import com.future.api.movie.service.MovieService;
 import com.future.commons.dao.BaseDao;
-import com.future.commons.service.BaseServiceImpl;
+import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -33,17 +33,19 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
     int deleteByPrimaryKey(String id);
 
     @Insert({
-        "insert into t_movie (id, img_id, ",
-        "name, type, director, ",
-        "score, short_message, ",
-        "staror, area, production_year, ",
+        "insert into t_movie (id, url, ",
+        "img_id, name, type, ",
+        "director, score, ",
+        "short_message, staror, ",
+        "area, production_year, ",
         "owner_id, created_by, ",
         "created_date, updated_by, ",
         "updated_date)",
-        "values (#{id,jdbcType=VARCHAR}, #{imgId,jdbcType=VARCHAR}, ",
-        "#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{director,jdbcType=VARCHAR}, ",
-        "#{score,jdbcType=VARCHAR}, #{shortMessage,jdbcType=VARCHAR}, ",
-        "#{staror,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{productionYear,jdbcType=INTEGER}, ",
+        "values (#{id,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, ",
+        "#{imgId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, ",
+        "#{director,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR}, ",
+        "#{shortMessage,jdbcType=VARCHAR}, #{staror,jdbcType=VARCHAR}, ",
+        "#{area,jdbcType=VARCHAR}, #{productionYear,jdbcType=INTEGER}, ",
         "#{ownerId,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, ",
         "#{createdDate,jdbcType=DATE}, #{updatedBy,jdbcType=VARCHAR}, ",
         "#{updatedDate,jdbcType=DATE})"
@@ -56,6 +58,7 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
     @SelectProvider(type=MovieSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="img_id", property="imgId", jdbcType=JdbcType.VARCHAR),
         @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
         @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
@@ -76,6 +79,7 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
     @SelectProvider(type=MovieSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="img_id", property="imgId", jdbcType=JdbcType.VARCHAR),
         @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
         @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
@@ -95,13 +99,14 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
 
     @Select({
         "select",
-        "id, img_id, name, type, director, score, short_message, staror, area, production_year, ",
+        "id, url, img_id, name, type, director, score, short_message, staror, area, production_year, ",
         "owner_id, created_by, created_date, updated_by, updated_date",
         "from t_movie",
         "where id = #{id,jdbcType=VARCHAR}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="img_id", property="imgId", jdbcType=JdbcType.VARCHAR),
         @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
         @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
@@ -130,7 +135,8 @@ public interface MovieMapper extends BaseDao<Movie,MovieCriteria,String> {
 
     @Update({
         "update t_movie",
-        "set img_id = #{imgId,jdbcType=VARCHAR},",
+        "set url = #{url,jdbcType=VARCHAR},",
+          "img_id = #{imgId,jdbcType=VARCHAR},",
           "name = #{name,jdbcType=VARCHAR},",
           "type = #{type,jdbcType=VARCHAR},",
           "director = #{director,jdbcType=VARCHAR},",

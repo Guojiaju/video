@@ -21,7 +21,10 @@ public class MovieController {
     @RequestMapping(value = "/movies",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> create(@RequestBody Movie movie){
 
-
+        return null;
+    }
+    @RequestMapping(value = "")
+    public ResponseEntity get(){
         return null;
     }
 }

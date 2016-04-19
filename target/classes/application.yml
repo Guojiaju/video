@@ -28,9 +28,11 @@ spring:
        date-format: yyyy-MM-dd HH:mm:ss
     # File Upload Limit
     multipart:
-        size :100M
         maxFileSize : 10M
         maxRequestSize: 10M
+    # File folder
+    file:
+        path: D:/test/images
 
 # MyBatis
 mybatis:

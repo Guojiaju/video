@@ -5,7 +5,7 @@ import com.future.api.category.domain.Category;
 import com.future.api.category.domain.CategoryCriteria;
 import com.future.api.category.service.CategoryService;
 import com.future.commons.dao.BaseDao;
-import com.future.commons.service.BaseServiceImpl;
+import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

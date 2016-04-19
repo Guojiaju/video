@@ -41,6 +41,7 @@
     <shiro-spring.version>1.2.3</shiro-spring.version>
     <shiro-web.version>1.2.3</shiro-web.version>
     <shiro-aspectj.version>1.2.3</shiro-aspectj.version>
+    <shiro-jwt>1.1</shiro-jwt>
   </properties>
 
   <parent>
@@ -196,6 +197,12 @@
       <artifactId>shiro-aspectj</artifactId>
       <version>${shiro-aspectj.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.panchitoboy</groupId>
+      <artifactId>shiro-jwt</artifactId>
+      <version>${shiro-jwt}</version>
+    </dependency>
+
   </dependencies>
   <build>
     <pluginManagement>

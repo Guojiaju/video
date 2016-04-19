@@ -5,7 +5,7 @@ import com.future.api.resources.domain.Resources;
 import com.future.api.resources.domain.ResourcesCriteria;
 import com.future.api.resources.service.ResourcesService;
 import com.future.commons.dao.BaseDao;
-import com.future.commons.service.BaseServiceImpl;
+import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

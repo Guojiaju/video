@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Eric.guo
  * @date 2016/4/12 0012
  */
-
 @RestController
 @RequestMapping("/api/account")
 public class AccountController {

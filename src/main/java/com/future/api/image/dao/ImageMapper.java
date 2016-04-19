@@ -19,7 +19,7 @@ import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.JdbcType;
 
-public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
+public interface ImageMapper extends BaseDao<Image ,ImageCriteria,String>{
     @SelectProvider(type=ImageSqlProvider.class, method="countByExample")
     int countByExample(ImageCriteria example);
 
@@ -33,11 +33,13 @@ public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
     int deleteByPrimaryKey(String id);
 
     @Insert({
-        "insert into t_image (id, local_path, ",
+        "insert into t_image (id, type, ",
+        "image_name, local_path, ",
         "url, created_by, ",
         "created_date, updated_by, ",
         "updated_date)",
-        "values (#{id,jdbcType=VARCHAR}, #{localPath,jdbcType=VARCHAR}, ",
+        "values (#{id,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, ",
+        "#{imageName,jdbcType=VARCHAR}, #{localPath,jdbcType=VARCHAR}, ",
         "#{url,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, ",
         "#{createdDate,jdbcType=DATE}, #{updatedBy,jdbcType=VARCHAR}, ",
         "#{updatedDate,jdbcType=DATE})"
@@ -50,6 +52,8 @@ public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
     @SelectProvider(type=ImageSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
+        @Result(column="image_name", property="imageName", jdbcType=JdbcType.VARCHAR),
         @Result(column="local_path", property="localPath", jdbcType=JdbcType.VARCHAR),
         @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
@@ -62,6 +66,8 @@ public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
     @SelectProvider(type=ImageSqlProvider.class, method="selectByExample")
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
+        @Result(column="image_name", property="imageName", jdbcType=JdbcType.VARCHAR),
         @Result(column="local_path", property="localPath", jdbcType=JdbcType.VARCHAR),
         @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
@@ -73,12 +79,15 @@ public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
 
     @Select({
         "select",
-        "id, local_path, url, created_by, created_date, updated_by, updated_date",
+        "id, type, image_name, local_path, url, created_by, created_date, updated_by, ",
+        "updated_date",
         "from t_image",
         "where id = #{id,jdbcType=VARCHAR}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.VARCHAR, id=true),
+        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
+        @Result(column="image_name", property="imageName", jdbcType=JdbcType.VARCHAR),
         @Result(column="local_path", property="localPath", jdbcType=JdbcType.VARCHAR),
         @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="created_by", property="createdBy", jdbcType=JdbcType.VARCHAR),
@@ -99,7 +108,9 @@ public interface ImageMapper extends BaseDao<Image,ImageCriteria,String> {
 
     @Update({
         "update t_image",
-        "set local_path = #{localPath,jdbcType=VARCHAR},",
+        "set type = #{type,jdbcType=VARCHAR},",
+          "image_name = #{imageName,jdbcType=VARCHAR},",
+          "local_path = #{localPath,jdbcType=VARCHAR},",
           "url = #{url,jdbcType=VARCHAR},",
           "created_by = #{createdBy,jdbcType=VARCHAR},",
           "created_date = #{createdDate,jdbcType=DATE},",

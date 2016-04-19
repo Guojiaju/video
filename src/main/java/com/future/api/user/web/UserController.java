@@ -40,9 +40,8 @@ public class UserController {
             return new ResponseEntity<>(users, HttpStatus.OK);
         }
         else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
     }
 
     /**
@@ -55,7 +54,7 @@ public class UserController {
         log.debug("REST request to get user by id :{id}" ,id);
         User user = userService.findOne(id);
         if(user == null || user.equals("")){
-            return new ResponseEntity<>("The 'id:{id}' user dose not exists",HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("The 'id:{id}' user dose not exists",HttpStatus.NO_CONTENT);
         }else
             return new ResponseEntity<>(user,HttpStatus.OK);
     }
@@ -68,7 +67,7 @@ public class UserController {
     public ResponseEntity<?> create(@RequestBody User user){
         log.debug("REST request to create user");
         User newUser = userService.save(user);
-        return new ResponseEntity<>(newUser,HttpStatus.OK);
+        return new ResponseEntity<>(newUser,HttpStatus.CREATED);
     }
 
     /**
@@ -87,4 +86,3 @@ public class UserController {
     }
 
 }
-

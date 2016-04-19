@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="96e44543-bf73-48b2-9794-be426f5b7afa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_panchitoboy_shiro_jwt_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_3_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_3_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_52.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ops4j_pax_shiro_pax_shiro_cdi_0_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ops4j_pax_shiro_pax_shiro_cdi_web_0_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/web/MovieController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/web/dto/MovieDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/bulid/test.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/upload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/video_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/video_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/category/service/imp/CategoryServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/category/service/imp/CategoryServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/dao/ImageMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/dao/ImageMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/dao/ImageSqlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/dao/ImageSqlProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/domain/Image.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/domain/Image.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/domain/ImageCriteria.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/domain/ImageCriteria.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/service/ImageService.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/service/ImageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/service/imp/ImageServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/service/imp/ImageServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/image/web/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/image/web/ImageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/login/AccountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/login/AccountController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/movie/dao/MovieMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/dao/MovieMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/movie/dao/MovieSqlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/dao/MovieSqlProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/movie/domain/Movie.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/domain/Movie.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/movie/domain/MovieCriteria.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/domain/MovieCriteria.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/movie/service/imp/MovieServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/movie/service/imp/MovieServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/resources/service/imp/ResourcesServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/resources/service/imp/ResourcesServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/role/service/imp/RoleServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/role/service/imp/RoleServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/user/service/imp/UserServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/user/service/imp/UserServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/api/user/web/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/api/user/web/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/future/commons/util/FileUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/commons/util/FileUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/future/api/image/dao/mapper-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/future/api/image/dao/mapper-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/future/api/movie/dao/mapper-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/future/api/movie/dao/mapper-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator.properties" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video.iml" afterPath="$PROJECT_DIR$/video.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/future/commons/service/BaseServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/future/commons/service/imp/BaseServiceImpl.java" />
     </list>
     <ignored path="video.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +97,8 @@
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19599108">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.25389755">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1027,16 +1066,16 @@
       <updated>1461050818896</updated>
       <workItem from="1461050821933" duration="2775000" />
       <workItem from="1461053629642" duration="1717000" />
-      <workItem from="1461055999247" duration="583000" />
+      <workItem from="1461055999247" duration="1106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5075000" />
+    <option name="totallyTimeSpent" value="5598000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="234" y="210" width="1400" height="1000" extended-state="1" />
-    <editor active="false" />
+    <frame x="234" y="210" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1047,7 +1086,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46352413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46352413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1206,8 +1245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19599108">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.25389755">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

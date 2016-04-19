@@ -5,10 +5,11 @@ import com.future.api.image.domain.Image;
 import com.future.api.image.domain.ImageCriteria;
 import com.future.api.image.service.ImageService;
 import com.future.commons.dao.BaseDao;
-import com.future.commons.service.BaseServiceImpl;
+import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 /**
  * ImageServiceImp
@@ -26,5 +27,16 @@ public class ImageServiceImp extends BaseServiceImpl<Image,ImageCriteria> implem
     @Override
     protected BaseDao<Image, ImageCriteria, String> getDao() {
         return imageDao;
+    }
+
+    @Override
+    public Image insert(Image image) {
+        Assert.notNull(image);
+        if(image.getId() == null){
+            this.save(image);
+        }else{
+            imageDao.insert(image);
+        }
+        return image;
     }
 }

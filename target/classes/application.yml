@@ -28,7 +28,7 @@ spring:
        date-format: yyyy-MM-dd HH:mm:ss
     # File Upload Limit
     multipart:
-        maxFileSize: 10M
+        maxFileSize : 10M
         maxRequestSize: 10M
     # File folder
     file:

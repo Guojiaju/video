@@ -4,6 +4,7 @@ package com.future.api.user.service;
 import com.future.api.user.domain.User;
 import com.future.api.user.domain.UserCriteria;
 import com.future.commons.service.BaseService;
+import com.github.pagehelper.PageInfo;
 
 /**
  * UserService
@@ -13,5 +14,8 @@ import com.future.commons.service.BaseService;
  */
 
 public interface UserService extends BaseService<User,UserCriteria> {
+
+    PageInfo<User> getAllUsers();
+
 }
 

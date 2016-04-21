@@ -10,7 +10,7 @@ dataSource:
    databaseName: test
    serverName: 127.0.0.1
    username: root
-   password:
+   password: admin
    cachePrepStmts: true
    prepStmtsSize: 250
    prepStmtsCacheSqlLimit: 2048
@@ -45,4 +45,7 @@ mybatis:
 # LOGGING
 logging:
     level:
-       com.ibatis:DEBUG
+        root:WARN
+        org.springframework.web:DEBUG
+        com.ibatis:DEBUG
+

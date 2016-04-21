@@ -186,9 +186,9 @@ public abstract class BaseServiceImpl<T extends AbstractEntity, E extends Abstra
 		long count = count();
 		return new PageImpl<T>(list, pageable, count);
 	}
-	
-	
-	
+
+
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<T> search(E criteria, Sort sort) {

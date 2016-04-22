@@ -9,7 +9,6 @@ import com.future.commons.service.imp.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -33,10 +32,19 @@ public class MovieServiceImp extends BaseServiceImpl<Movie,MovieCriteria> implem
 
     @Override
     public List<Movie> getMovies(Movie movie) {
-        Assert.notNull(movie);
+
         MovieCriteria criteria = new MovieCriteria();
         if(movie.getType() != null){
             criteria.createCriteria().andTypeEqualTo(movie.getType());
+        }
+        if(movie.getArea() != null){
+            criteria.createCriteria().andAreaEqualTo(movie.getArea());
+        }
+        if(movie.getOwnerId() != null){
+            criteria.createCriteria().andCreatedByEqualTo(movie.getOwnerId());
+        }
+        if(movie.getName() !=null){
+            criteria.createCriteria().andNameLike(movie.getName());
         }
         return movieDao.selectByExample(criteria);
     }

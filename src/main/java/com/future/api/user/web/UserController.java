@@ -4,6 +4,10 @@ import com.future.api.user.domain.User;
 import com.future.api.user.service.UserService;
 
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +39,7 @@ public class UserController {
      * Get users
      * @return
      */
+    @ApiOperation(value ="get users , Author: Eric.guo" ,notes = "获取所有用户信息")
     @RequestMapping(value = "/users",method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAll(){
         log.debug("REST request to get all Users");
@@ -54,8 +59,9 @@ public class UserController {
      * @param id
      * @return
      */
+    @ApiOperation(value="get user by id , Author : Eric.guo" ,notes = "获取用户信息" , position = 1)
     @RequestMapping(value = "/users/{id}" ,method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getOne(@PathVariable("id") String id){
+    public ResponseEntity<?> getOne(@ApiParam(value = "用户id(必填)" ,required = true ) @PathVariable("id") String id){
         log.debug("REST request to get user by id :{id}" ,id);
         User user = userService.findOne(id);
         if(user == null || user.equals("")){
@@ -68,8 +74,9 @@ public class UserController {
      * create user
      * @return
      */
+    @ApiOperation(value="create user , Author : Eric.guo",notes = "创建用户")
     @RequestMapping(value = "/users" ,method = RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> create(@RequestBody User user) throws URISyntaxException{
+    public ResponseEntity<?> create(@ApiParam(value="用户实体类" ,required = true) @RequestBody User user) throws URISyntaxException{
         log.debug("REST request to create user");
         User newUser = userService.save(user);
         return ResponseEntity.created(new URI("/api/users/"+ newUser.getId())).build();
@@ -80,8 +87,9 @@ public class UserController {
      * @param user
      * @return
      */
+    @ApiOperation(value="update user by id , Author : Eric.guo",notes = "更新用户信息")
     @RequestMapping(value = "/users" ,method = RequestMethod.PUT ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> update(@RequestBody User user)throws URISyntaxException{
+    public ResponseEntity<?> update(@ApiParam(value="用户实体类" ,required = true) @RequestBody User user)throws URISyntaxException{
         log.debug("REST request to update user");
         if(user.getId() == null || user.getId().equals("")){
             return create(user);

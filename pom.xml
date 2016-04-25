@@ -34,6 +34,7 @@
     <!-- swagger -->
     <swagger.version>2.1.2</swagger.version>
     <swagger-ui.version>2.3.1</swagger-ui.version>
+    <version.jackson>2.7.0</version.jackson>
   <!-- druid -->
   <druid.version>1.0.9</druid.version>
     <!-- shiro -->
@@ -202,7 +203,24 @@
       <artifactId>shiro-jwt</artifactId>
       <version>${shiro-jwt}</version>
     </dependency>
-
+   <!-- <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${version.jackson}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${version.jackson}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${version.jackson}</version>
+      <scope>test</scope>
+    </dependency>-->
   </dependencies>
   <build>
     <pluginManagement>

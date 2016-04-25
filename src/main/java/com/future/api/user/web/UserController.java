@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 /**
  * UserController
@@ -43,15 +44,16 @@ public class UserController {
     @RequestMapping(value = "/users",method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAll(){
         log.debug("REST request to get all Users");
-        PageInfo<User> users =  userService.getAllUsers();
-        return new ResponseEntity<>(users.getList(), HttpStatus.OK);
-
-       /* if(users !=null && users.size()>0){
+        //PageInfo<User> users =  userService.getAllUsers();
+        //return new ResponseEntity<>(users.getList(), HttpStatus.OK);
+        List<User> users = userService.findAll();
+        if(users !=null && users.size()>0){
             return new ResponseEntity<>(users, HttpStatus.OK);
         }
         else{
             return ResponseEntity.noContent().build();
-        }*/
+        }
+
     }
 
     /**

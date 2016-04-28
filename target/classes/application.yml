@@ -10,7 +10,7 @@ dataSource:
    databaseName: test
    serverName: 127.0.0.1
    username: root
-   password:
+   password: admin
    cachePrepStmts: true
    prepStmtsSize: 250
    prepStmtsCacheSqlLimit: 2048
@@ -30,6 +30,9 @@ spring:
     multipart:
         maxFileSize: 10M
         maxRequestSize: 10M
+    # File folder
+    file:
+        path: D:/test/images
 
 # MyBatis
 mybatis:
@@ -40,4 +43,7 @@ mybatis:
 # LOGGING
 logging:
     level:
-       com.ibatis:DEBUG
+        com.ibatis: DEBUG
+    file:
+        D:/test/app.log
+

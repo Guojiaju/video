@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @ConditionalOnClass({ EnableTransactionManagement.class})
 @AutoConfigureAfter({ DataBaseConfiguration.class })
-@MapperScan("com.eric.demo.api.**.dao")
+@MapperScan("com.future.api.**.dao")
 public class MybatisConfiguration implements EnvironmentAware {
 
 	private static Log logger = LogFactory.getLog(MybatisConfiguration.class);
@@ -59,7 +59,7 @@ public class MybatisConfiguration implements EnvironmentAware {
 
 			return sessionFactory.getObject();
 		} catch (Exception e) {
-			logger.warn("Could not confiure mybatis session factory");
+			logger.error("Could not confiure mybatis session factory");
 			return null;
 		}
 	}

@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class CategoryController {
 
-    private final Logger logger = LoggerFactory.getLogger(CategoryController.class);
+    private final static Logger logger = LoggerFactory.getLogger(CategoryController.class);
 
     @Autowired
     private CategoryService categoryService;

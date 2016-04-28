@@ -2,6 +2,7 @@ package com.future.api.movie.web;
 
 import com.future.api.movie.domain.Movie;
 import com.future.api.movie.service.MovieService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,7 @@ public class MovieController {
 
         return null;
     }*/
+    @ApiOperation(value = "根据查询条件获取对应的movies" ,position = 1)
     @RequestMapping(value = "/movies",method = RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> get(@RequestBody Movie movie){
         List<Movie> movieList = movieService.getMovies(movie);

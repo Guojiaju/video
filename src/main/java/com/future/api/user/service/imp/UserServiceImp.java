@@ -28,11 +28,8 @@ public class UserServiceImp extends BaseServiceImpl<User,UserCriteria> implement
 
     @Override
     public PageInfo<User> getAllUsers() {
-
-        PageHelper.startPage(PaginationContext.getPageNum(),PaginationContext.getPageSize());
-        PageInfo<User> page = (PageInfo)this.findAll();
-
-        return page;
+        PageHelper.startPage(1,10);
+        return (PageInfo<User>) this.findAll();
     }
 
     @Override

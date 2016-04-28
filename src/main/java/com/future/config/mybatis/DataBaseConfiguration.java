@@ -21,7 +21,7 @@ public class DataBaseConfiguration implements EnvironmentAware {
 
 	private RelaxedPropertyResolver propertyResolver;
 
-	private static Logger log = LoggerFactory.getLogger(DataBaseConfiguration.class);
+	private final static Logger log = LoggerFactory.getLogger(DataBaseConfiguration.class);
 
 	@Override
 	public void setEnvironment(Environment env) {

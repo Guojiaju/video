@@ -4,14 +4,11 @@ import com.future.api.user.domain.User;
 import com.future.api.user.service.UserService;
 
 import com.github.pagehelper.PageInfo;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 
 /**
  * UserController
@@ -31,7 +27,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class UserController {
 
-    private final Logger log = LoggerFactory.getLogger(UserController.class);
+    private final static Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
@@ -44,16 +40,15 @@ public class UserController {
     @RequestMapping(value = "/users",method = RequestMethod.GET , produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAll(){
         log.debug("REST request to get all Users");
-        //PageInfo<User> users =  userService.getAllUsers();
-        //return new ResponseEntity<>(users.getList(), HttpStatus.OK);
-        List<User> users = userService.findAll();
+        PageInfo<User> users =  userService.getAllUsers();
+        return new ResponseEntity<>(users.getList(), HttpStatus.OK);
+       /* List<User> users = userService.findAll();
         if(users !=null && users.size()>0){
             return new ResponseEntity<>(users, HttpStatus.OK);
         }
         else{
             return ResponseEntity.noContent().build();
-        }
-
+        }*/
     }
 
     /**

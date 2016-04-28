@@ -43,7 +43,7 @@ mybatis:
 # LOGGING
 logging:
     level:
-        root:WARN
-        org.springframework.web:DEBUG
-        com.ibatis:DEBUG
+        com.ibatis: DEBUG
+    file:
+        D:/test/app.log
 

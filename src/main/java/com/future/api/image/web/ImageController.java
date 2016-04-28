@@ -5,6 +5,7 @@ import com.future.api.image.service.ImageService;
 import com.future.commons.util.FileUtil;
 import com.future.commons.util.IdGen;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +27,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ImageController {
-    private final Logger log = org.slf4j.LoggerFactory.getLogger(ImageController.class);
+    private static Logger log = LoggerFactory.getLogger(ImageController.class);
     @Autowired
     private ImageService imageService;
 
